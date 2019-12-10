@@ -12,3 +12,11 @@ An interactive page of multiple choice questions that compound to determine the 
 
 ## Project Management Board
 View our work flow [here](https://github.com/OPSS2019/OPSS_final_project/projects).
+
+## Domain Model
+- [Domain Model](/assets/DomainModel.jpg)
+
+## Wireframes
+- [Index](/assets/wireframeIndex.png)
+- [Results](/assets/wireframeResults.png)
+- [AboutUs](/assets/wireframeAboutUs.png)

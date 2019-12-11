@@ -14,7 +14,7 @@ An interactive page of multiple choice questions that compound to determine the 
 View our work flow [here](https://github.com/OPSS2019/OPSS_final_project/projects).
 
 ## Domain Model
-- [Domain Model](/assets/DomainModel.jpg)
+- [Domain Model](/assets/dataflow.png)
 
 ## Wireframes
 - [Index](/assets/wireframeIndex.png)

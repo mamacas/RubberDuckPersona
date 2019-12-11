@@ -26,7 +26,7 @@ We all love to be assessed and analyzed, and to identify with something. Who doe
 ### MVP
 - **index** 
     - 5 personality determining questions
-    - 3 possible "personalities" (outcomes)
+    - 4 possible "personalities" (outcomes)
     - 2 choice options per question
 - **storage and results**
     - display and save your "personality" to local storage

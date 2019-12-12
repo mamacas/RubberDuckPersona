@@ -34,21 +34,21 @@ User.prototype.newAttempt = function(quiz, result){
 };
 
 Quiz.prototype.addQuestion = function(question, responseA, weightA, responseB, weightB){
-  this.results.push([question, responseA, weightA, responseB, weightB]);
+  this.questions.push([question, responseA, weightA, responseB, weightB]);
 };
 
 Quiz.prototype.newResult = function(resultTitle, resultBio, imagePath, imageAtl, imageTitle){
   let resultCounter = 0;
-  this.questions.push([resultTitle, resultCounter, resultBio, imagePath, imageAtl, imageTitle]);
+  this.results.push([resultTitle, resultCounter, resultBio, imagePath, imageAtl, imageTitle]);
 };
 
 Quiz.prototype.newAttempt = function(resultToIncrement){
   ++this.quizCounter;
-  this.results.forEach(function(n)){
+  this.results.forEach(function(n){
     if(n[0] === resultToIncrement){
       ++n[1];
     }
-  }
+  });
 };
 
 // History.prototype.newResult = function(result){

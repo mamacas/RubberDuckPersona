@@ -1,0 +1,138 @@
+* {
+    text-align: center;
+}
+
+body, html {
+    width: 100%;
+}
+
+header {
+    border: 1px solid black;
+    height: 100px;
+}
+
+h1 {
+    border: 1px dotted black;
+    font-size: 40px;
+    float: left;
+    margin: 20px;
+    padding: 10px;
+}
+
+h2 {
+    font-size: 30px;
+    border: 2px solid green;
+    width: 300px;
+    margin: auto;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h4 {
+    color:rgb(184, 66, 66);
+}
+
+p{
+    font-style: italic;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+li {
+    border: 1px solid black;
+    margin: 20px;
+    padding: 10px;
+    display: inline-block;
+    text-align: right;
+}
+
+/* Index Styling */
+
+#welcome-message {
+    display: block;
+    border: 1px dashed orange;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#username-entry {
+    display: block;
+    border: 1px dashed orange;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#question-box {
+    border: 1px dashed green;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#leftbutton {
+    float: left;
+}
+
+#question-text {
+    float: left;
+}
+
+#rightbutton {
+    float: right;
+}
+
+#option1, #option2{
+    padding: 10px;
+    float: left;
+    clear: both;
+}
+
+
+/* About Us Styling */
+
+.about-us {
+    border: 1px solid orange;
+    width: 70%;
+    margin: auto;
+}
+
+.headshots {
+    border: 1px dotted red;
+    width: 70px;
+    height: auto;
+}
+
+/* Result Page Styling */
+
+#result-box {
+    border: 1px solid blue;
+    width: 50%;
+    margin: auto;
+    margin-top: 35px;
+}
+
+#duck-persona {
+    border: 1px dotted red;
+    width: 70px;
+    height: auto;
+}
+
+.prev-result {
+    border: 2px solid pink;
+    margin: auto;
+    margin-top: 20px;
+    width: 50%;
+}
+
+footer {
+    border: 1px dashed green;
+    margin-top: 50px;
+}

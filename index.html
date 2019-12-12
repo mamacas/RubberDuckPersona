@@ -15,28 +15,33 @@
             </ul>
         </header>
         <main>
-            <div>
-                <p></p>
-                <button></button>
+            <div id="welcome-message">
+                <p>Welcome!</p>
+                <button>Hide</button>
             </div>
-            <div>
+            <div id="username-entry">
                 <form>
                     <fieldset>
+                        <label>What is your name?</label>
                         <input type="text">
-                        <label>Name</label>
                         <button>Submit</button>
                     </fieldset>
                 </form>
             </div>
-            <div>
+            <div id="question-box">
                 <h2>Question Placeholder</h2>
                 <form>
                     <fieldset>
-                        <button>left</button>
-                        <p>question description</p>
-                        <button>right</button>
+                        <button id="leftbutton">left</button>
+                        <p id="question-text">question description</p>
+                        <button id="rightbutton">right</button>
+                        
+                        <div id="option1"> 
                         <input type="radio"><label>Option 1</label>
+                        </div>
+                        <div id="option2">
                         <input type="radio"><label>Option 2</label>
+                        </div>
                     </fieldset>
                 </form>
             </div>

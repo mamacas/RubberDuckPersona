@@ -75,16 +75,20 @@ function newResponse(weight){
   }
 }
 
-function lastResponse(){
+function lastResponse(quiz){
   mapXY();
-  quizObjects[quizObjects.length - 1].newAttempt(quadrant);
+  quiz.newAttempt(quadrant);
 }
 
 // Build some sample questions and users
-new Quiz('color');
-quizObjects[0].addQuestion('What is your favorite color?', 'Blue', 'x++', 'Red', 'y++');
-quizObjects[0].addResult('blueSkittle', 'It is a blue skittle', 'noSource', 'fakeAlt', 'fakeTitle');
-quizObjects[0].addResult('redM&M', 'It is a red M&M', 'noSource', 'fakeAlt', 'fakeTitle');
-quizObjects[0].addResult('greenSourPatch', 'It is a green sour patch', 'none', 'fake', 'fake');
-quizObjects[0].addResult('yellowHaribo', 'It is a yellow haribo', 'none', 'fake', 'fake');
-// quizObjects[0].newAttempt('1');
+let color = new Quiz('color');  // Instantiate a new Quiz, 'color'
+color.addQuestion('What is your favorite color?', 'Blue', 'x++', 'Red', 'y++');  // Add a question to 'color' Quiz
+color.addResult('blueSkittle', 'It is a blue skittle', 'noSource', 'fakeAlt', 'fakeTitle');  // Add a result to 'color' Quiz, 1/4 or index 0 of 'color'
+color.addResult('redM&M', 'It is a red M&M', 'noSource', 'fakeAlt', 'fakeTitle');  // Add a result to 'color' Quiz, 2/4 or index 1 of 'color'
+color.addResult('greenSourPatch', 'It is a green sour patch', 'none', 'fake', 'fake');  // Add a result to 'color' Quiz, 3/4 or index 2 of 'color'
+color.addResult('yellowHaribo', 'It is a yellow haribo', 'none', 'fake', 'fake');  // Add a result to 'color' Quiz, 4/4 or index 3 of 'color'
+newResponse(prompt('mock response value:'));  // Mocking a response
+lastResponse(color);  // Mock the lastResponse function, as if we've responded to all questions
+console.log(color.results); // Console log the color.results array so we can see that we've got a result logged
+
+// color.newAttempt('1');

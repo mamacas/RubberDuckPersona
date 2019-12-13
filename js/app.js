@@ -1,6 +1,12 @@
 'use strict';
 
 // Global variables and document elements
+let theQuestion = document.getElementById('theQuestion');
+let theField = document.getElementById('theField');
+let input0 = document.getElementById('input0');
+let output0 = document.getElementById('output0');
+let input1 = document.getElementById('input1');
+let output1 = document.getElementById('output1');
 let userObjects = [];
 let quizObjects = [];
 let x = 0;
@@ -65,9 +71,13 @@ function newResponse(weight){ // This is a function to call in the event handler
   }
 }
 
-function lastResponse(quiz){  // This needs to be run when the last question is answered. It can either go after 'newResponse()', or we can bake 'newResponse()' into this. Either path is good.
+function lastResponse(quiz){  // This needs to be run when the last question is answered. You must feed it the name of the quiz. It can either go after 'newResponse()', or we can bake 'newResponse()' into this. Either path is pretty good at this point, I would lean toward baking in 'newResponse()' though.
   mapXY();
   quiz.newAttempt(quadrant);
+}
+
+function renderQuestion(){  // This function is used to render the contents of a question to the page. You need to feed it ...
+  ;
 }
 
 // Build some sample questions and users

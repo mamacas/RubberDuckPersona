@@ -3,9 +3,9 @@
 // Global variables and document elements
 let userObjects = [];
 let quizObjects = [];
-let historyObjects = [];
 let x = 0;
 let y = 0;
+let quadrant = 0;
 
 // Constructor functions
 function User(userName){
@@ -22,15 +22,7 @@ function Quiz(title){
   quizObjects.push(this);
 }
 
-// function History(quiz){
-//   this.quiz = quiz,
-//   this.cummulative = 0,
-//   this.resultCounter = [],
-//   historyObjects.push(this);
-// }
-
 // Prototype functions
-
 User.prototype.newAttempt = function(quiz, result){
   this.attempts.push([quiz, result]);
 };
@@ -46,23 +38,53 @@ Quiz.prototype.addResult = function(resultTitle, resultBio, imagePath, imageAtl,
 
 Quiz.prototype.newAttempt = function(resultToIncrement){
   ++this.quizCounter;
-  this.results.forEach(function(n){
-    if(n[0] === resultToIncrement){
-      ++n[1];
-    }
-  });
+  if(this.results[resultToIncrement]){
+    ++this.results[resultToIncrement][1];
+  } else{
+    alert('You maybe did not call your Quiz newAttempt prototype function correctly? Go debug bruh!');
+  }
 };
 
-// History.prototype.newResult = function(result){
-//   this.cummulative++;
-//   if ()
-// }
-
 // Helper functions
+function mapXY(){
+  if(x >= 0 && y >= 0){
+    quadrant = 0;
+  } else if(x < 0 && y >= 0){
+    quadrant = 1;
+  } else if(x < 0 && y < 0){
+    quadrant = 2;
+  } else if(x >= 0 && y < 0){
+    quadrant = 3;
+  } else{
+    alert('Your \'mapXY\' came up with a \'quadrant\' variable that is invalid. Go debug, bruh!');
+  }
+  console.log(`xy mapped to quadrant ${quadrant}`);
+}
+
+function newResponse(weight){
+  if(weight === 'x++'){
+    ++x;
+  } else if(weight === 'x--'){
+    --x;
+  } else if(weight === 'y++'){
+    ++y;
+  } else if(weight === 'y--'){
+    --y;
+  } else{
+    alert('Your \'newResponse\' function resulted in a failure.\nIt\'s likely that you didn\'t pass a valid argument somewhere.\nGo debug, bruh!');
+  }
+}
+
+function lastResponse(){
+  mapXY();
+  quizObjects[quizObjects.length - 1].newAttempt(quadrant);
+}
 
 // Build some sample questions and users
 new Quiz('color');
 quizObjects[0].addQuestion('What is your favorite color?', 'Blue', 'x++', 'Red', 'y++');
 quizObjects[0].addResult('blueSkittle', 'It is a blue skittle', 'noSource', 'fakeAlt', 'fakeTitle');
 quizObjects[0].addResult('redM&M', 'It is a red M&M', 'noSource', 'fakeAlt', 'fakeTitle');
-quizObjects[0].newAttempt('blueSkittle');
+quizObjects[0].addResult('greenSourPatch', 'It is a green sour patch', 'none', 'fake', 'fake');
+quizObjects[0].addResult('yellowHaribo', 'It is a yellow haribo', 'none', 'fake', 'fake');
+// quizObjects[0].newAttempt('1');

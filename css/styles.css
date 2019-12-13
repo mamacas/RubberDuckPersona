@@ -11,10 +11,24 @@ header {
     height: 100px;
 }
 
+.title-duck {
+    max-width: 100px;
+    float: left;
+    padding-left: 10px;
+}
+
+button {
+    background-color: #a2d6f9
+}
+
+label {
+    font-family: 'Open Sans', sans-serif;
+}
+
 h1 {
     border: 1px dotted black;
     font-family: 'Bungee', cursive;
-    font-size: 40px;
+    font-size: 20px;
     float: left;
     margin: 20px;
     padding: 10px;
@@ -28,15 +42,17 @@ h2 {
 }
 
 h3 {
+    font-family: 'Bungee', cursive;
     font-size: 20px;
 }
 
 h4 {
+    font-style: italic;
     color:rgb(184, 66, 66);
 }
 
 p{
-    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
 }
 
 ul {
@@ -46,11 +62,13 @@ ul {
   }
 
 li {
-    border: 1px solid black;
+    border: 2px solid #1e96fc;
+    background-color: #a2d6f9;
     margin: 20px;
     padding: 10px;
     display: inline-block;
     text-align: right;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Index Styling */
@@ -102,14 +120,40 @@ li {
 .about-us {
     border: 1px solid orange;
     width: 70%;
+    overflow: scroll;
     margin: auto;
 }
 
 .headshots {
     border: 1px dotted red;
-    width: 70px;
+    width: 150px;
     height: auto;
 }
+
+.bioright {
+    float: right;
+    border: 2px solid turquoise;
+    width: 60%;
+    margin: auto;
+}
+
+.bioleft {
+    float: left;
+    border: 2px solid turquoise;
+    width: 60%;
+    margin: auto;
+}
+
+.imgleft {
+    float: left;
+    margin: auto;
+}
+
+.imgright {
+    float: right;
+    margin: auto;
+}
+
 
 /* Result Page Styling */
 

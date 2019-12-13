@@ -4,6 +4,8 @@
 let userObjects = [];
 let quizObjects = [];
 let historyObjects = [];
+let x = 0;
+let y = 0;
 
 // Constructor functions
 function User(userName){
@@ -37,7 +39,7 @@ Quiz.prototype.addQuestion = function(question, responseA, weightA, responseB, w
   this.questions.push([question, responseA, weightA, responseB, weightB]);
 };
 
-Quiz.prototype.newResult = function(resultTitle, resultBio, imagePath, imageAtl, imageTitle){
+Quiz.prototype.addResult = function(resultTitle, resultBio, imagePath, imageAtl, imageTitle){
   let resultCounter = 0;
   this.results.push([resultTitle, resultCounter, resultBio, imagePath, imageAtl, imageTitle]);
 };
@@ -58,4 +60,9 @@ Quiz.prototype.newAttempt = function(resultToIncrement){
 
 // Helper functions
 
-
+// Build some sample questions and users
+new Quiz('color');
+quizObjects[0].addQuestion('What is your favorite color?', 'Blue', 'x++', 'Red', 'y++');
+quizObjects[0].addResult('blueSkittle', 'It is a blue skittle', 'noSource', 'fakeAlt', 'fakeTitle');
+quizObjects[0].addResult('redM&M', 'It is a red M&M', 'noSource', 'fakeAlt', 'fakeTitle');
+quizObjects[0].newAttempt('blueSkittle');

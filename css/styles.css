@@ -10,11 +10,11 @@ body {
     background-color: rgba(162, 214, 249, 0.5);
 }
 
-
 header {
     /* border: 1px solid black; */
     height: 120px;
-    background-color: #ffffff
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px 1px black;
 }
 
 .title-duck {
@@ -40,23 +40,30 @@ ul {
 
 li {
     border: none;
-    background-color: #a2d6f9;
-    color: #072ac6;
-    margin: 25px 10px;
-    padding: 25px;
+    background-color: rgba(252, 243, 0, .75);
+    color: #000000;
+    margin: 40px 10px;
+    padding: 10px;
     display: inline-block;
     text-align: right;
     font-family: 'Open Sans', sans-serif;
 }
 
 a {
-    color: #072ac6;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: rgba(255, 198, 0, 0.5);
+    color: #000000;
     text-decoration: none;
     font-weight: bold;
 }
 
 a:visited {
-    color: #072ac6;
+    color: #000000;
     text-decoration: none;
     font-weight: bold;
 }
@@ -124,6 +131,7 @@ label {
     /* padding: 10px; */
     text-align: center;
     background-color: #ffffff;
+    box-shadow: 2px 2px 5px black;
 }
 
 #question-box h2 {
@@ -134,11 +142,13 @@ label {
     border: 1px solid red;
     width: 85%;
     font-size: 20px;
-    margin: 5px;
+    display: inline-block;
+    text-align: center;
+    margin-left: 45px;
     padding: 10px;
 }
 
-#leftbutton {
+/* #leftbutton {
     float: left;
     width: 40px;
 }
@@ -146,19 +156,22 @@ label {
 #rightbutton {
     float: right;
     width: 40px;
-}
+} */
 
 #question-text {
     float: left;
 }
 
+#question-submit {
+    display: inline-block;
+    margin: auto;
+}
 
 #input0, #input1 {
     padding: 10px;
     float: left;
     clear: both;
 }
-
 
 /* About Us Styling */
 
@@ -206,7 +219,6 @@ label {
     margin: auto;
 }
 
-
 /* Result Page Styling */
 
 #result-box {
@@ -215,6 +227,7 @@ label {
     margin: auto;
     margin-top: 35px;
     background-color: white;
+    box-shadow: 2px 2px 5px black;
 }
 
 #result-box>h2 {
@@ -235,6 +248,7 @@ label {
 .prev-result {
     border: 2px solid rgba(255, 198, 0, 1);
     background-color: white;
+    box-shadow: 2px 2px 5px black;
     margin: auto;
     margin-top: 20px;
     width: 50%;

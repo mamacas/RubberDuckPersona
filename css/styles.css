@@ -117,7 +117,7 @@ label {
 
 #question-box {
     /* border: 1px dashed green; */
-    width: 50%;
+    width: 60%;
     margin: auto;
     /* margin-top: 20px; */
     padding: 10px;
@@ -133,21 +133,24 @@ label {
     border: 1px solid red;
     width: 85%;
     font-size: 20px;
-    margin: 10px;
+    margin: 5px;
     padding: 20px;
 }
 
 #leftbutton {
     float: left;
+    width: 40px;
+}
+
+#rightbutton {
+    float: right;
+    width: 40px;
 }
 
 #question-text {
     float: left;
 }
 
-#rightbutton {
-    float: right;
-}
 
 #input0, #input1 {
     padding: 10px;

@@ -86,23 +86,21 @@ function renderQuestion(){  // This function is used to render the contents of a
 // Build some sample questions and users
 let color = new Quiz('color'); // Instantiate a new Quiz, 'color'
 color.addQuestion('What is your favorite color?', 'Blue', 'x++', 'Red', 'x--'); // Add a question to 'color' Quiz
-color.addQuestion('What is your second favorite color?', 'Green', 'y--', 'Yellow', 'y++');
+color.addQuestion('What is your second favorite color?', 'Green', 'y++', 'Yellow', 'y--');
 
 function renderQuestion() {
   theQuestion.innerText = color.questions[currentQuestion][0];
   output0.innerText = color.questions[currentQuestion][1];
   output1.innerText = color.questions[currentQuestion][3];
   input0.addEventListener('click', function(event){
-    // radio0.checked = 'true';
-    // radio0.checked = 'false';
     ++currentQuestion;
+    newResponse(color.questions[currentQuestion][2]);
     renderQuestion();
   });
   input1.addEventListener('click', function(event){
-    // radio1.checked = 'true';
     ++currentQuestion;
+    newResponse(color.questions[currentQuestion][4]);
     renderQuestion();
-    // radio1.checked = 'false';
   });
 }
 renderQuestion();
@@ -112,7 +110,7 @@ color.addResult('redM&M', 'It is a red M&M', 'noSource', 'fakeAlt', 'fakeTitle')
 color.addResult('greenSourPatch', 'It is a green sour patch', 'none', 'fake', 'fake'); // Add a result to 'color' Quiz, 3/4 or index 2 of 'color'
 color.addResult('yellowHaribo', 'It is a yellow haribo', 'none', 'fake', 'fake'); // Add a result to 'color' Quiz, 4/4 or index 3 of 'color'
 // The following two lines need to happen as results of events. We need to build our code to do this.
-newResponse('y--'); // Mocking a response
+// newResponse('y--'); // Mocking a response
 lastResponse(color); // Mock the lastResponse function, as if we've responded to all questions
 console.log(color.results); // Console log the color.results array so we can see that we've got a result logged
 

@@ -211,14 +211,23 @@ label {
     margin-top: 35px;
 }
 
+#result-box>h2 {
+    width: 100%;
+    background-color: rgba(252, 243, 0, .5);
+    border: none;
+}
+
+#result-box div {
+    margin: 15px;
+}
+
 #duck-persona {
-    border: 1px dotted red;
-    width: 70px;
-    height: auto;
+    width: 225px;
+    margin: 10px;
 }
 
 .prev-result {
-    border: 2px solid pink;
+    border: 2px solid rgba(255, 198, 0, 1);
     margin: auto;
     margin-top: 20px;
     width: 50%;
@@ -228,18 +237,24 @@ label {
 .prev-result img {
     width: 150px;
     float: right;
+    margin: 10px;
 }
 
 .prev-result h3 {
     float: left;
+    width: 100%;
+    background-color: rgba(252, 243, 0, .5);
 }
 
 .prev-result p {
     float: left;
     clear: both;
+    margin: 10px;
 }
 
+/* footer */
 footer {
-    border: 1px dashed green;
     margin-top: 50px;
+    background-color: rgba(252, 243, 0, .5);
+    height: 15px;
 }

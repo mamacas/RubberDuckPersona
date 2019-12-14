@@ -11,6 +11,10 @@ header {
     height: 100px;
 }
 
+#header-img-title {
+    
+}
+
 .title-duck {
     max-width: 100px;
     float: left;
@@ -30,7 +34,7 @@ label {
 h1 {
     border: 1px dotted black;
     font-family: 'Bungee', cursive;
-    font-size: 20px;
+    font-size: 40px;
     float: left;
     margin: 20px;
     padding: 10px;
@@ -66,11 +70,24 @@ ul {
 li {
     border: 2px solid #1e96fc;
     background-color: #a2d6f9;
-    margin: 20px;
+    color: #072ac6;
+    margin: 25px 10px;
     padding: 10px;
     display: inline-block;
     text-align: right;
     font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: #072ac6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:visited {
+    color: #072ac6;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* Index Styling */

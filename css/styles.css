@@ -209,6 +209,7 @@ label {
     width: 50%;
     margin: auto;
     margin-top: 35px;
+    background-color: white;
 }
 
 #result-box>h2 {
@@ -228,6 +229,7 @@ label {
 
 .prev-result {
     border: 2px solid rgba(255, 198, 0, 1);
+    background-color: white;
     margin: auto;
     margin-top: 20px;
     width: 50%;

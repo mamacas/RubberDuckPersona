@@ -4,17 +4,14 @@
 let theQuestion = document.getElementById('theQuestion');
 let theField = document.getElementById('theField');
 let input0 = document.getElementById('input0');
-// let radio0 = document.getElementById('radio0');
 let output0 = document.getElementById('output0');
 let input1 = document.getElementById('input1');
-// let radio1 = document.getElementById('radio1');
 let output1 = document.getElementById('output1');
 let userObjects = [];
 let quizObjects = [];
 let x = 0;
 let y = 0;
 let quadrant = 0;
-let currentQuestion = 0;
 
 // Constructor functions
 function User(userName){ // This is the constructor function for our User objects. This has not yet been developed very far. More to come.
@@ -54,6 +51,19 @@ Quiz.prototype.newAttempt = function(resultToIncrement){ // A method of Quiz to 
   }
 };
 
+// 
+// Build some sample questions and users
+let color = new Quiz('color'); // Instantiate a new Quiz, 'color'
+color.addQuestion('What is your favorite color?', 'Blue', 'x++', 'Red', 'x--'); // Add a question to 'color' Quiz
+color.addQuestion('What is your second favorite color?', 'Green', 'y++', 'Yellow', 'y--');
+color.addResult('blueSkittle', 'It is a blue skittle', 'noSource', 'fakeAlt', 'fakeTitle'); // Add a result to 'color' Quiz, 1/4 or index 0 of 'color'
+color.addResult('redM&M', 'It is a red M&M', 'noSource', 'fakeAlt', 'fakeTitle'); // Add a result to 'color' Quiz, 2/4 or index 1 of 'color'
+color.addResult('greenSourPatch', 'It is a green sour patch', 'none', 'fake', 'fake'); // Add a result to 'color' Quiz, 3/4 or index 2 of 'color'
+color.addResult('yellowHaribo', 'It is a yellow haribo', 'none', 'fake', 'fake'); // Add a result to 'color' Quiz, 4/4 or index 3 of 'color'
+
+let currentQuiz = color;
+let currentQuestion = (currentQuiz.questions.length - 1);
+
 // Helper functions
 function mapXY(){ // This function takes in our x and y values, and converts them into an index value (0-3), that I call 'quadrant' because we use a graph to visualize the relation between x/y and the results.
   if(x >= 0 && y >= 0){quadrant = 0;
@@ -74,44 +84,34 @@ function newResponse(weight){ // This is a function to call in the event handler
   }
 }
 
-function lastResponse(quiz){ // This needs to be run when the last question is answered. You must feed it the name of the quiz. It can either go after 'newResponse()', or we can bake 'newResponse()' into this. Either path is pretty good at this point, I would lean toward baking in 'newResponse()' though.
+function lastResponse(){ // This needs to be run when the last question is answered. You must feed it the name of the quiz. It will call mapXY, add a newAttempt to the quiz, and load the results.html page.
   mapXY();
-  quiz.newAttempt(quadrant);
+  currentQuiz.newAttempt(quadrant);
+  window.location.href = 'results.html';
 }
 
-function renderQuestion(){  // This function is used to render the contents of a question to the page. You need to feed it ...
-  
-}
-
-// Build some sample questions and users
-let color = new Quiz('color'); // Instantiate a new Quiz, 'color'
-color.addQuestion('What is your favorite color?', 'Blue', 'x++', 'Red', 'x--'); // Add a question to 'color' Quiz
-color.addQuestion('What is your second favorite color?', 'Green', 'y++', 'Yellow', 'y--');
-
-function renderQuestion() {
-  theQuestion.innerText = color.questions[currentQuestion][0];
-  output0.innerText = color.questions[currentQuestion][1];
-  output1.innerText = color.questions[currentQuestion][3];
-  input0.addEventListener('click', function(event){
-    ++currentQuestion;
-    newResponse(color.questions[currentQuestion][2]);
-    renderQuestion();
-  });
-  input1.addEventListener('click', function(event){
-    ++currentQuestion;
-    newResponse(color.questions[currentQuestion][4]);
-    renderQuestion();
+function optionEvents(element, option){ // This function contains an event listener we use for the options. It will call newResponse according to option, move currentQuestion to the next value, and depending if there are remaining questions, call either renderQuestion (for the next question now), or call lastResponse.
+  element.addEventListener('click', function(event){
+    newResponse(currentQuiz.questions[currentQuestion][option]);
+      if(currentQuestion > 0){
+        --currentQuestion;
+        renderQuestion();
+      } else{
+        lastResponse();
+        --currentQuestion;
+      }
   });
 }
+
+function renderQuestion() { // This function renders our main feature to the page with its content, and adds event listeners to the options (only when the first question is loaded).
+  theQuestion.innerText = currentQuiz.questions[currentQuestion][0];
+  output0.innerText = currentQuiz.questions[currentQuestion][1];
+  output1.innerText = currentQuiz.questions[currentQuestion][3];
+  if(currentQuestion === (currentQuiz.questions.length - 1)){
+    optionEvents(input0, 2);
+    optionEvents(input1, 4);
+  }
+}
+
+// Call our main function
 renderQuestion();
-
-color.addResult('blueSkittle', 'It is a blue skittle', 'noSource', 'fakeAlt', 'fakeTitle'); // Add a result to 'color' Quiz, 1/4 or index 0 of 'color'
-color.addResult('redM&M', 'It is a red M&M', 'noSource', 'fakeAlt', 'fakeTitle'); // Add a result to 'color' Quiz, 2/4 or index 1 of 'color'
-color.addResult('greenSourPatch', 'It is a green sour patch', 'none', 'fake', 'fake'); // Add a result to 'color' Quiz, 3/4 or index 2 of 'color'
-color.addResult('yellowHaribo', 'It is a yellow haribo', 'none', 'fake', 'fake'); // Add a result to 'color' Quiz, 4/4 or index 3 of 'color'
-// The following two lines need to happen as results of events. We need to build our code to do this.
-// newResponse('y--'); // Mocking a response
-lastResponse(color); // Mock the lastResponse function, as if we've responded to all questions
-console.log(color.results); // Console log the color.results array so we can see that we've got a result logged
-
-// color.newAttempt('1');

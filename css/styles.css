@@ -14,7 +14,8 @@ body {
 header {
     /* border: 1px solid black; */
     height: 120px;
-    background-color: #ffffff
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px 1px black;
 }
 
 .title-duck {
@@ -124,6 +125,7 @@ label {
     /* padding: 10px; */
     text-align: center;
     background-color: #ffffff;
+    box-shadow: 2px 2px 5px black;
 }
 
 #question-box h2 {
@@ -215,6 +217,7 @@ label {
     margin: auto;
     margin-top: 35px;
     background-color: white;
+    box-shadow: 2px 2px 5px black;
 }
 
 #result-box>h2 {
@@ -235,6 +238,7 @@ label {
 .prev-result {
     border: 2px solid rgba(255, 198, 0, 1);
     background-color: white;
+    box-shadow: 2px 2px 5px black;
     margin: auto;
     margin-top: 20px;
     width: 50%;

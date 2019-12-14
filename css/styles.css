@@ -108,7 +108,7 @@ li {
     float: right;
 }
 
-#option1, #option2{
+#input0, #input1 {
     padding: 10px;
     float: left;
     clear: both;

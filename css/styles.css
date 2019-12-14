@@ -71,7 +71,6 @@ a:visited {
 h2 {
     font-size: 30px;
     font-family: 'Bungee', cursive;
-    border: 2px solid green;
     width: 300px;
     margin: auto;
 }
@@ -174,15 +173,29 @@ label {
 
 /* About Us Styling */
 
-.about-us {
-    border: 1px solid orange;
+#about-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.about-section-left {
+    /* border: 1px solid orange; */
     width: 70%;
     height: 200px;
     margin: auto;
+    background-color: rgba(255, 198, 0, .35);
+}
+
+.about-section-right {
+    /* border: 1px solid orange; */
+    width: 70%;
+    height: 200px;
+    margin: auto;
+    background-color: rgba(252, 243, 0, .35);
 }
 
 .headshots {
-    border: 1px dotted red;
+    /* border: 1px dotted red; */
     width: 160px;
     height: auto;
     padding-top: 20px;
@@ -190,7 +203,7 @@ label {
 
 .bioright {
     float: right;
-    border: 2px solid turquoise;
+    /* border: 2px solid turquoise; */
     width: 75%;
     margin: auto;
     margin-top: 20px;
@@ -200,7 +213,7 @@ label {
 
 .bioleft {
     float: left;
-    border: 2px solid turquoise;
+    /* border: 2px solid turquoise; */
     width: 75%;
     margin: auto;
     margin-top: 20px;

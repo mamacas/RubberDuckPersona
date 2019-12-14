@@ -163,7 +163,9 @@ label {
 }
 
 #question-submit {
-    display: inline-block;
+    float: right;
+    clear: both;
+    margin: 20px 15px;
 }
 
 #input0, #input1 {

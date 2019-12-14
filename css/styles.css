@@ -149,7 +149,7 @@ label {
     float: right;
 }
 
-#option1, #option2{
+#input0, #input1 {
     padding: 10px;
     float: left;
     clear: both;
@@ -219,6 +219,21 @@ label {
     margin: auto;
     margin-top: 20px;
     width: 50%;
+    height: 200px;
+}
+
+.prev-result img {
+    width: 150px;
+    float: right;
+}
+
+.prev-result h3 {
+    float: left;
+}
+
+.prev-result p {
+    float: left;
+    clear: both;
 }
 
 footer {

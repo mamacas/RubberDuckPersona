@@ -11,6 +11,10 @@ header {
     height: 100px;
 }
 
+#header-img-title {
+    
+}
+
 .title-duck {
     max-width: 100px;
     float: left;
@@ -18,7 +22,9 @@ header {
 }
 
 button {
-    background-color: #a2d6f9
+    background-color: #a2d6f9;
+    border-radius: 50%;
+    height: 25px;
 }
 
 label {
@@ -28,7 +34,7 @@ label {
 h1 {
     border: 1px dotted black;
     font-family: 'Bungee', cursive;
-    font-size: 20px;
+    font-size: 40px;
     float: left;
     margin: 20px;
     padding: 10px;
@@ -64,11 +70,24 @@ ul {
 li {
     border: 2px solid #1e96fc;
     background-color: #a2d6f9;
-    margin: 20px;
+    color: #072ac6;
+    margin: 25px 10px;
     padding: 10px;
     display: inline-block;
     text-align: right;
     font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: #072ac6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:visited {
+    color: #072ac6;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* Index Styling */
@@ -94,6 +113,15 @@ li {
     width: 50%;
     margin: auto;
     margin-top: 20px;
+    text-align: center;
+}
+
+#question-text {
+    border: 1px solid red;
+    width: 85%;
+    font-size: 20px;
+    padding: 20px;
+    
 }
 
 #leftbutton {
@@ -120,7 +148,8 @@ li {
 .about-us {
     border: 1px solid orange;
     width: 70%;
-    overflow: scroll;
+    height: 170px;
+    /* overflow: scroll; */
     margin: auto;
 }
 
@@ -133,15 +162,17 @@ li {
 .bioright {
     float: right;
     border: 2px solid turquoise;
-    width: 60%;
+    width: 85%;
     margin: auto;
+    margin-top: 20px;
 }
 
 .bioleft {
     float: left;
     border: 2px solid turquoise;
-    width: 60%;
+    width: 85%;
     margin: auto;
+    margin-top: 20px;
 }
 
 .imgleft {

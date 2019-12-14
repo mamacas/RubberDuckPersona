@@ -162,9 +162,7 @@ label {
 }
 
 #question-submit {
-    float: right;
-    clear: both;
-    margin: 20px 15px;
+    display: inline-block;
 }
 
 #input0, #input1 {
@@ -185,7 +183,7 @@ label {
     width: 70%;
     height: 200px;
     margin: auto;
-    background-color: rgba(255, 198, 0, .35);
+    background-color: #ffffff;
 }
 
 .about-section-right {
@@ -193,7 +191,15 @@ label {
     width: 70%;
     height: 200px;
     margin: auto;
-    background-color: rgba(252, 243, 0, .35);
+    background-color: #ffffff;
+}
+
+.about-section-right h3 {
+    background-color: rgba(252, 243, 0, .5);
+}
+
+.about-section-left h3 {
+    background-color: rgba(255, 198, 0, .5);
 }
 
 .headshots {

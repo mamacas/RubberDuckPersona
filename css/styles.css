@@ -18,7 +18,9 @@ header {
 }
 
 button {
-    background-color: #a2d6f9
+    background-color: #a2d6f9;
+    border-radius: 50%;
+    height: 25px;
 }
 
 label {
@@ -94,6 +96,15 @@ li {
     width: 50%;
     margin: auto;
     margin-top: 20px;
+    text-align: center;
+}
+
+#question-text {
+    border: 1px solid red;
+    width: 85%;
+    font-size: 20px;
+    padding: 20px;
+    
 }
 
 #leftbutton {
@@ -120,7 +131,8 @@ li {
 .about-us {
     border: 1px solid orange;
     width: 70%;
-    overflow: scroll;
+    height: 170px;
+    /* overflow: scroll; */
     margin: auto;
 }
 
@@ -133,15 +145,17 @@ li {
 .bioright {
     float: right;
     border: 2px solid turquoise;
-    width: 60%;
+    width: 85%;
     margin: auto;
+    margin-top: 20px;
 }
 
 .bioleft {
     float: left;
     border: 2px solid turquoise;
-    width: 60%;
+    width: 85%;
     margin: auto;
+    margin-top: 20px;
 }
 
 .imgleft {

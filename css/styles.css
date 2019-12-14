@@ -6,9 +6,15 @@ body, html {
     width: 100%;
 }
 
+body {
+    background-color: rgba(162, 214, 249, 0.5);
+}
+
+
 header {
-    border: 1px solid black;
-    height: 100px;
+    /* border: 1px solid black; */
+    height: 120px;
+    background-color: #ffffff
 }
 
 .title-duck {
@@ -17,25 +23,47 @@ header {
     padding-left: 10px;
 }
 
-button {
-    background-color: #a2d6f9
+h1 {
+    /* border: 1px dotted black; */
+    font-family: 'Bungee', cursive;
+    font-size: 40px;
+    float: left;
+    margin: 20px;
+    padding: 20px;
 }
 
-label {
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+li {
+    border: none;
+    background-color: #a2d6f9;
+    color: #072ac6;
+    margin: 25px 10px;
+    padding: 25px;
+    display: inline-block;
+    text-align: right;
     font-family: 'Open Sans', sans-serif;
 }
 
-h1 {
-    border: 1px dotted black;
-    font-family: 'Bungee', cursive;
-    font-size: 20px;
-    float: left;
-    margin: 20px;
-    padding: 10px;
+a {
+    color: #072ac6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:visited {
+    color: #072ac6;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 h2 {
     font-size: 30px;
+    font-family: 'Bungee', cursive;
     border: 2px solid green;
     width: 300px;
     margin: auto;
@@ -53,60 +81,76 @@ h4 {
 
 p{
     font-family: 'Open Sans', sans-serif;
+    padding: 10px;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+button {
+    background-color: rgba(30, 150, 252, 0.7);
+    border-radius: 50%;
+    height: 30px;
+    border: none;
+}
 
-li {
-    border: 2px solid #1e96fc;
-    background-color: #a2d6f9;
-    margin: 20px;
-    padding: 10px;
-    display: inline-block;
-    text-align: right;
+label {
     font-family: 'Open Sans', sans-serif;
 }
 
 /* Index Styling */
 
-#welcome-message {
+#welcome-instruct {
     display: block;
-    border: 1px dashed orange;
+    /* border: 1px dashed orange; */
     width: 50%;
     margin: auto;
+    padding: 20px 0px 10px 0px;
     margin-top: 20px;
 }
 
 #username-entry {
     display: block;
-    border: 1px dashed orange;
+    /* border: 1px dashed orange; */
     width: 50%;
     margin: auto;
-    margin-top: 20px;
+    padding: 20px 0px;
+    /* margin-top: 20px; */
 }
 
 #question-box {
-    border: 1px dashed green;
-    width: 50%;
+    /* border: 1px dashed green; */
+    width: 60%;
     margin: auto;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    padding: 10px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+#question-box h2 {
+    padding: 10px;
+}
+
+#question-text {
+    border: 1px solid red;
+    width: 85%;
+    font-size: 20px;
+    margin: 5px;
+    padding: 20px;
 }
 
 #leftbutton {
     float: left;
+    width: 40px;
+}
+
+#rightbutton {
+    float: right;
+    width: 40px;
 }
 
 #question-text {
     float: left;
 }
 
-#rightbutton {
-    float: right;
-}
 
 #input0, #input1 {
     padding: 10px;
@@ -120,7 +164,8 @@ li {
 .about-us {
     border: 1px solid orange;
     width: 70%;
-    overflow: scroll;
+    height: 170px;
+    /* overflow: scroll; */
     margin: auto;
 }
 
@@ -133,15 +178,17 @@ li {
 .bioright {
     float: right;
     border: 2px solid turquoise;
-    width: 60%;
+    width: 85%;
     margin: auto;
+    margin-top: 20px;
 }
 
 .bioleft {
     float: left;
     border: 2px solid turquoise;
-    width: 60%;
+    width: 85%;
     margin: auto;
+    margin-top: 20px;
 }
 
 .imgleft {
@@ -164,20 +211,50 @@ li {
     margin-top: 35px;
 }
 
+#result-box>h2 {
+    width: 100%;
+    background-color: rgba(252, 243, 0, .5);
+    border: none;
+}
+
+#result-box div {
+    margin: 15px;
+}
+
 #duck-persona {
-    border: 1px dotted red;
-    width: 70px;
-    height: auto;
+    width: 225px;
+    margin: 10px;
 }
 
 .prev-result {
-    border: 2px solid pink;
+    border: 2px solid rgba(255, 198, 0, 1);
     margin: auto;
     margin-top: 20px;
     width: 50%;
+    height: 200px;
 }
 
+.prev-result img {
+    width: 150px;
+    float: right;
+    margin: 10px;
+}
+
+.prev-result h3 {
+    float: left;
+    width: 100%;
+    background-color: rgba(252, 243, 0, .5);
+}
+
+.prev-result p {
+    float: left;
+    clear: both;
+    margin: 10px;
+}
+
+/* footer */
 footer {
-    border: 1px dashed green;
     margin-top: 50px;
+    background-color: rgba(252, 243, 0, .5);
+    height: 15px;
 }

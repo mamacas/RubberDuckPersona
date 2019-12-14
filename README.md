@@ -21,6 +21,10 @@ View our work flow [here](https://github.com/OPSS2019/OPSS_final_project/project
 - [Results](/assets/wireframeResults.png)
 - [AboutUs](/assets/wireframeAboutUs.png)
 
+## Resources
+- [Google Custom Fonts: Open Sans](https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans)
+- [Google Custom Fonts: Bungee](https://fonts.google.com/specimen/Bungee?selection.family=Bungee)
+
 ## Quiz Logic
    To begin with, we were very unsure how to build the logic behind what the quiz answers mean. Our first thoughts traveled to the most basic of options, increase or decrease a single counter, and each of our results would be associated with specified value ranges. You could spoof this a bit to seem more or less dynamic. Result values that are odd are A, evens are B, add a 'pitfall' question that a certain option always give you a certain (or random) duck, and so on. But beyond those tricks, there's really no dynamics at play.
   

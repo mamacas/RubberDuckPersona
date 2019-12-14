@@ -10,11 +10,11 @@ body {
     background-color: rgba(162, 214, 249, 0.5);
 }
 
-
 header {
     /* border: 1px solid black; */
     height: 120px;
-    background-color: #ffffff
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px 1px black;
 }
 
 .title-duck {
@@ -40,23 +40,30 @@ ul {
 
 li {
     border: none;
-    background-color: #a2d6f9;
-    color: #072ac6;
-    margin: 25px 10px;
-    padding: 25px;
+    background-color: rgba(252, 243, 0, .75);
+    color: #000000;
+    margin-top: 40px;
+    padding: 10px;
     display: inline-block;
     text-align: right;
     font-family: 'Open Sans', sans-serif;
 }
 
 a {
-    color: #072ac6;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: rgba(255, 198, 0, 0.5);
+    color: #000000;
     text-decoration: none;
     font-weight: bold;
 }
 
 a:visited {
-    color: #072ac6;
+    color: #000000;
     text-decoration: none;
     font-weight: bold;
 }
@@ -64,7 +71,6 @@ a:visited {
 h2 {
     font-size: 30px;
     font-family: 'Bungee', cursive;
-    border: 2px solid green;
     width: 300px;
     margin: auto;
 }
@@ -118,11 +124,13 @@ label {
 #question-box {
     /* border: 1px dashed green; */
     width: 60%;
+    min-width: 500px;
     margin: auto;
     /* margin-top: 20px; */
-    padding: 10px;
+    /* padding: 10px; */
     text-align: center;
     background-color: #ffffff;
+    box-shadow: 2px 2px 5px black;
 }
 
 #question-box h2 {
@@ -133,11 +141,13 @@ label {
     border: 1px solid red;
     width: 85%;
     font-size: 20px;
-    margin: 5px;
-    padding: 20px;
+    display: inline-block;
+    text-align: center;
+    margin: 20px 0px 20px 45px;
+    padding: 10px;
 }
 
-#leftbutton {
+/* #leftbutton {
     float: left;
     width: 40px;
 }
@@ -145,12 +155,15 @@ label {
 #rightbutton {
     float: right;
     width: 40px;
-}
+} */
 
 #question-text {
     float: left;
 }
 
+#question-submit {
+    display: inline-block;
+}
 
 #input0, #input1 {
     padding: 10px;
@@ -158,37 +171,62 @@ label {
     clear: both;
 }
 
-
 /* About Us Styling */
 
-.about-us {
-    border: 1px solid orange;
+#about-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.about-section-left {
+    /* border: 1px solid orange; */
     width: 70%;
-    height: 170px;
-    /* overflow: scroll; */
+    height: 200px;
     margin: auto;
+    background-color: #ffffff;
+}
+
+.about-section-right {
+    /* border: 1px solid orange; */
+    width: 70%;
+    height: 200px;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+.about-section-right h3 {
+    background-color: rgba(252, 243, 0, .5);
+}
+
+.about-section-left h3 {
+    background-color: rgba(255, 198, 0, .5);
 }
 
 .headshots {
-    border: 1px dotted red;
-    width: 150px;
+    /* border: 1px dotted red; */
+    width: 160px;
     height: auto;
+    padding-top: 20px;
 }
 
 .bioright {
     float: right;
-    border: 2px solid turquoise;
-    width: 85%;
+    /* border: 2px solid turquoise; */
+    width: 75%;
     margin: auto;
     margin-top: 20px;
+    padding-right: 20px;
+    font-size: 14px;
 }
 
 .bioleft {
     float: left;
-    border: 2px solid turquoise;
-    width: 85%;
+    /* border: 2px solid turquoise; */
+    width: 75%;
     margin: auto;
     margin-top: 20px;
+    padding-left: 20px;
+    font-size: 14px;
 }
 
 .imgleft {
@@ -201,7 +239,6 @@ label {
     margin: auto;
 }
 
-
 /* Result Page Styling */
 
 #result-box {
@@ -209,6 +246,8 @@ label {
     width: 50%;
     margin: auto;
     margin-top: 35px;
+    background-color: white;
+    box-shadow: 2px 2px 5px black;
 }
 
 #result-box>h2 {
@@ -228,6 +267,8 @@ label {
 
 .prev-result {
     border: 2px solid rgba(255, 198, 0, 1);
+    background-color: white;
+    box-shadow: 2px 2px 5px black;
     margin: auto;
     margin-top: 20px;
     width: 50%;

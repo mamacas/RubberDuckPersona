@@ -24,6 +24,11 @@ View our work flow [here](https://github.com/OPSS2019/OPSS_final_project/project
 ## Resources
 - [Google Custom Fonts: Open Sans](https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans)
 - [Google Custom Fonts: Bungee](https://fonts.google.com/specimen/Bungee?selection.family=Bungee)
+- [Header Duck Image](https://images-na.ssl-images-amazon.com/images/I/31D52aAsX7L.jpg)
+- [Vibin' Duck Image](https://images.squarespace-cdn.com/content/v1/5b3533be5417fc1ec0557ea2/1562084771301-SFJAPS46EGVUU82PT913/ke17ZwdGBToddI8pDm48kO5wp5IYarelgW111WaXbNt7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0hReLB75oIvKxcDxwlnLXaZU6XYRUcoMQDB5NeF8TeSuSEjrHTW2qjRDkvymdPTBWA/ASrubberducky.jpeg)
+- [Friduc Kahlo Image](https://www.budducks.com/media/com_eshop/products/resized/Yarto%20Frida-1080x1080.jpg)
+- [Chewducca Image](https://www.romeduckstore.it/wp-content/uploads/2019/11/paperella-Chewbecca2-600x600.png)
+- [Sherduck Holmes Image](https://images-na.ssl-images-amazon.com/images/I/51HWPOJDhtL._SL1000_.jpg)
 
 ## Quiz Logic
    To begin with, we were very unsure how to build the logic behind what the quiz answers mean. Our first thoughts traveled to the most basic of options, increase or decrease a single counter, and each of our results would be associated with specified value ranges. You could spoof this a bit to seem more or less dynamic. Result values that are odd are A, evens are B, add a 'pitfall' question that a certain option always give you a certain (or random) duck, and so on. But beyond those tricks, there's really no dynamics at play.

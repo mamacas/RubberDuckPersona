@@ -104,13 +104,15 @@ function lastResponse(){ // This needs to be run when the last question is answe
 
 new User('bob');
 // When username is entered...
-nameEntry.addEventListener('click', handleClick);
-new User(event.target.inputNameValue.value);
+nameField.addEventListener('submit', handleSubmit);
 
 
 // Do things with it
-function handleClick(event) {
+function handleSubmit(event) {
   event.preventDefault();
+
+  let newUsername = event.target.inputNameValue.value;
+  new User(newUsername);
 
   hide(welcomeMessage);
   hide(nameField);

@@ -1,6 +1,10 @@
 'use strict';
 
 // Global variables and document elements
+let welcomeMessage = document.getElementById('welcome-instruct');
+let nameField = document.getElementById('username-entry');
+let nameEntry = document.getElementById('nameEntry');
+let questionBox = document.getElementById('question-box');
 let theQuestion = document.getElementById('theQuestion');
 let theField = document.getElementById('theField');
 let input0 = document.getElementById('input0');
@@ -51,7 +55,15 @@ Quiz.prototype.newAttempt = function(resultToIncrement){ // A method of Quiz to 
   }
 };
 
-// 
+// Show/Hide Functions
+function show(elem) {
+  elem.style.display = 'block';
+}
+
+function hide(elem){
+  elem.style.display = 'none';
+}
+
 // Build some sample questions and users
 let color = new Quiz('color'); // Instantiate a new Quiz, 'color'
 color.addQuestion('What is your favorite color?', 'Blue', 'x++', 'Red', 'x--'); // Add a question to 'color' Quiz
@@ -90,16 +102,31 @@ function lastResponse(){ // This needs to be run when the last question is answe
   window.location.href = 'results.html';
 }
 
+new User('bob');
+// When username is entered...
+nameEntry.addEventListener('click', handleClick);
+new User(event.target.inputNameValue.value);
+
+
+// Do things with it
+function handleClick(event) {
+  event.preventDefault();
+
+  hide(welcomeMessage);
+  hide(nameField);
+  show(questionBox);
+}
+
 function optionEvents(element, option){ // This function contains an event listener we use for the options. It will call newResponse according to option, move currentQuestion to the next value, and depending if there are remaining questions, call either renderQuestion (for the next question now), or call lastResponse.
   element.addEventListener('click', function(event){
     newResponse(currentQuiz.questions[currentQuestion][option]);
-      if(currentQuestion > 0){
-        --currentQuestion;
-        renderQuestion();
-      } else{
-        lastResponse();
-        --currentQuestion;
-      }
+    if(currentQuestion > 0){
+      --currentQuestion;
+      renderQuestion();
+    } else{
+      lastResponse();
+      --currentQuestion;
+    }
   });
 }
 
@@ -115,3 +142,4 @@ function renderQuestion() { // This function renders our main feature to the pag
 
 // Call our main function
 renderQuestion();
+hide(questionBox);

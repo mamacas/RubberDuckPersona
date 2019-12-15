@@ -1,6 +1,10 @@
 'use strict';
 
 // Global variables and document elements
+let welcomeMessage = document.getElementById('welcome-instruct');
+let nameField = document.getElementById('username-entry');
+let nameEntry = document.getElementById('nameEntry');
+let questionBox = document.getElementById('question-box');
 let theQuestion = document.getElementById('theQuestion');
 let theField = document.getElementById('theField');
 let input0 = document.getElementById('input0');
@@ -51,17 +55,31 @@ Quiz.prototype.newAttempt = function(resultToIncrement){ // A method of Quiz to 
   }
 };
 
-// 
-// Build some sample questions and users
-let color = new Quiz('color'); // Instantiate a new Quiz, 'color'
-color.addQuestion('What is your favorite color?', 'Blue', 'x++', 'Red', 'x--'); // Add a question to 'color' Quiz
-color.addQuestion('What is your second favorite color?', 'Green', 'y++', 'Yellow', 'y--');
-color.addResult('blueSkittle', 'It is a blue skittle', 'noSource', 'fakeAlt', 'fakeTitle'); // Add a result to 'color' Quiz, 1/4 or index 0 of 'color'
-color.addResult('redM&M', 'It is a red M&M', 'noSource', 'fakeAlt', 'fakeTitle'); // Add a result to 'color' Quiz, 2/4 or index 1 of 'color'
-color.addResult('greenSourPatch', 'It is a green sour patch', 'none', 'fake', 'fake'); // Add a result to 'color' Quiz, 3/4 or index 2 of 'color'
-color.addResult('yellowHaribo', 'It is a yellow haribo', 'none', 'fake', 'fake'); // Add a result to 'color' Quiz, 4/4 or index 3 of 'color'
+// Show/Hide Functions
+function show(elem) {
+  elem.style.display = 'block';
+}
 
-let currentQuiz = color;
+function hide(elem){
+  elem.style.display = 'none';
+}
+
+// Build some sample questions and users
+// Figure out why first question written is second question to populate?
+let duckquiz = new Quiz('duckquiz'); // Instantiate a new Quiz, 'duckquiz'
+duckquiz.addQuestion('Friends invite you out to party, but your team has an assignment due tonight and you need to contribute. Do you...?', 'Quickly craft an MVP response and you’re off to Paaaaarr-TEHHHH!!', 'x++', 'Forego the fleeting distraction and apply yourself to the task at hand, for the sake of those depending upon you.', 'x--'); // Add a question to 'duckquiz' Quiz
+duckquiz.addQuestion('You’ve been tasked with creating a dynamic, interactive app! Any app you want! Your mind is an array of ideas, and you can’t wait to access them all! Which bit of coding are you most looking forward to?', 'JavaScript. Logic is my thing. I excel at creating the moving parts and making sure they work together harmoniously. ', 'y++', 'HTML/CSS. I love creating shiny, beautiful interfaces for the world to enjoy.', 'y--');
+duckquiz.addQuestion('You are fortunate enough to enjoy one whole day off of school/work each week. The past six days have been especially silly, and you can’t wait to be off duty. What are you doing?', 'I’m inside! There’s nothing like the comfort of my home after a long week.', 'x++', 'I’m outside! I’m energized by the bustle of the world and like to get out whenever I can.', 'y++');
+duckquiz.addQuestion('You’re about to drift off to sleep when suddenly you hear *crash!* a noise from the other room. How are you going to respond?', 'Bounce out of bed, grab whatever’s closest, and creep around, looking for the source of this terrible interruption to your good night’s sleep.', 'x--', 'You roll over and replay in your mind the day’s events, searching for a rational explanation, surely no one is out to get you… right?', 'y++');
+duckquiz.addQuestion('You fell asleep watching a movie you really enjoy. You find yourself in a dream, and you\'re in the most exciting part of the story. What\'s going on in this scene?', 'Recognition for your inspirational efforts are finally happening, you\'ve started a social movement.', 'y--', 'placeholder answer', 'x--');
+
+// RESULT PLACEHOLDERS
+duckquiz.addResult('blueSkittle', 'It is a blue skittle', 'noSource', 'fakeAlt', 'fakeTitle'); // Add a result to 'duckquiz' Quiz, 1/4 or index 0 of 'duckquiz'
+duckquiz.addResult('redM&M', 'It is a red M&M', 'noSource', 'fakeAlt', 'fakeTitle'); // Add a result to 'duckquiz' Quiz, 2/4 or index 1 of 'duckquiz'
+duckquiz.addResult('greenSourPatch', 'It is a green sour patch', 'none', 'fake', 'fake'); // Add a result to 'duckquiz' Quiz, 3/4 or index 2 of 'duckquiz'
+duckquiz.addResult('yellowHaribo', 'It is a yellow haribo', 'none', 'fake', 'fake'); // Add a result to 'duckquiz' Quiz, 4/4 or index 3 of 'duckquiz'
+
+let currentQuiz = duckquiz;
 let currentQuestion = (currentQuiz.questions.length - 1);
 
 // Helper functions
@@ -90,16 +108,33 @@ function lastResponse(){ // This needs to be run when the last question is answe
   window.location.href = 'results.html';
 }
 
+new User('bob');
+// When username is entered...
+nameField.addEventListener('submit', handleSubmit);
+
+
+// Do things with it
+function handleSubmit(event) {
+  event.preventDefault();
+
+  let newUsername = event.target.inputNameValue.value;
+  new User(newUsername);
+
+  hide(welcomeMessage);
+  hide(nameField);
+  show(questionBox);
+}
+
 function optionEvents(element, option){ // This function contains an event listener we use for the options. It will call newResponse according to option, move currentQuestion to the next value, and depending if there are remaining questions, call either renderQuestion (for the next question now), or call lastResponse.
   element.addEventListener('click', function(event){
     newResponse(currentQuiz.questions[currentQuestion][option]);
-      if(currentQuestion > 0){
-        --currentQuestion;
-        renderQuestion();
-      } else{
-        lastResponse();
-        --currentQuestion;
-      }
+    if(currentQuestion > 0){
+      --currentQuestion;
+      renderQuestion();
+    } else{
+      lastResponse();
+      --currentQuestion;
+    }
   });
 }
 
@@ -115,3 +150,4 @@ function renderQuestion() { // This function renders our main feature to the pag
 
 // Call our main function
 renderQuestion();
+hide(questionBox);

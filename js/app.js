@@ -113,11 +113,27 @@ function newResponse(weight){ // This is a function to call in the event handler
   }
 }
 
+function storeInLS(title, imgpath, description) {
+  var ResultObject = {
+    title: title,
+    imgPath: imgpath,
+    description: description
+  };
+
+  localStorage.setItem('userResults', JSON.stringify(ResultObject));
+}
+
 function lastResponse(){ // This needs to be run when the last question is answered. You must feed it the name of the quiz. It will call mapXY, add a newAttempt to the quiz, and load the results.html page.
   mapXY();
   currentQuiz.newAttempt(quadrant);
 
   nameField.removeEventListener('submit', handleSubmit);
+
+  let mostRecentAttempt = lastThreeAttempts[lastThreeAttempts.length - 1];
+
+  console.log('mostRecentAttempt: ', mostRecentAttempt);
+  
+  storeInLS(mostRecentAttempt[0], mostRecentAttempt[3], mostRecentAttempt[2]);
 
   window.location.href = 'results.html';
 }

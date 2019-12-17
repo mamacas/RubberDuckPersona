@@ -9,29 +9,30 @@
     </head>
     <body>
         <header>
-            <div id="header-img-title">
-                <img class="title-duck" src="assets/regular-duck.jpg"/>
+            <section id="header-img-title">
+                <img class="title-duck" src="assets/regular-duck.jpg" alt="A photo of an unornamented rubber duck" title="a traditional rubber duck" />
                 <h1>What's Your Rubber Duck Persona?</h1>
-            </div>
+            </section>
             <ul>
                 <li><a href="results.html">My Results</a></li>
                 <li><a href="aboutUs.html">About Us</a></li>
             </ul>
         </header>
         <main>
-            <div id="welcome-instruct">
+            <section id="welcome-instruct">
                 <p>Have you ever gazed contemplatively at a rubber duck and wondered,<br>"if I were reborn as this creature, what would I be like?"<br>Probably not, but here you are anyway!<br>Answer a few questions to determine your rubber duck persona.<br><br></p>
-            </div>
-            <div>
-                <form id="username-entry">
+                <button id="instruct-button">Hide Instructions</button>
+            </section>
+            <section id="username-entry">
+                <form>
                     <fieldset>
                         <label>Before we begin, what is your name?</label>
-                        <input type="text" id="inputNameValue">
+                        <input type="text" id="inputNameValue" placeholder="input username">
                         <button id="nameEntry" type="submit">Submit</button>
                     </fieldset>
                 </form>
-            </div>
-            <div id="question-box">
+            </section>
+            <section id="question-box">
                 <h2 id="theQuestion">Question 1</h2>
                 <form id="theField">
                     <fieldset>
@@ -42,20 +43,20 @@
                         
                         <div id="input0"> 
                         <!-- <input type="radio" name="radios" id="radio0"> -->
-                        <label id="output0">Option 1</label>
+                        <label id="output0" placeholder="choose answer one">Option 1</label>
                         </div>
                         <div id="input1">
                         <!-- <input type="radio" name="radios" id="radio1"> -->
-                        <label id="output1">Option 2</label>
+                        <label id="output1" placeholder="choose answer two">Option 2</label>
                         </div>
                     
                         <!-- <button id="question-submit">Next Question</button> -->
                     </fieldset>
                 </form>
-            </div>
+            </section>
         </main>
         <footer id="index-footer">
-            Brett & Cas & Madison & Thomas
+            &copy 2019 Team OPSS; Cas & Brett & Madison & Thomas
         </footer>
         <script src="js/app.js"></script>
     </body>

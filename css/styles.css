@@ -127,7 +127,7 @@ label {
     border: 2px solid rgba(255, 198, 0, 1);
     width: 60%;
     min-width: 500px;
-    margin: auto;
+    margin: 35px auto auto auto;
     text-align: center;
     background-color: #ffffff;
     box-shadow: 2px 2px 5px black;
@@ -175,14 +175,44 @@ label {
 
 /* About Us Styling */
 
-#about-title {
+/* #about-title {
     padding-top: 20px;
     padding-bottom: 20px;
+    border: 2px solid rgba(255, 198, 0, 1);
+    width: 50%;
+    margin: 35px auto auto auto;
+    background-color: white;
+    box-shadow: 2px 2px 5px black;
+}
+
+#about-title h2 {
+    width: 100%;
+    background-color: rgba(252, 243, 0, .5);
+    border: none;
+} */
+
+#about-container {
+    border: 2px solid rgba(255, 198, 0, 1);
+    margin: 35px auto auto auto;
+    width: 70%;
+    box-shadow: 2px 2px 5px black;
+}
+
+#about-title {
+    width: 100%;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+#about-title h2 {
+    width: 100%;
+    background-color: rgba(252, 243, 0, .5);
+    border: none;
 }
 
 .about-section-left {
     /* border: 1px solid orange; */
-    width: 70%;
+    width: 100%;
     height: 200px;
     margin: auto;
     background-color: #ffffff;
@@ -190,18 +220,18 @@ label {
 
 .about-section-right {
     /* border: 1px solid orange; */
-    width: 70%;
+    width: 100%;
     height: 200px;
     margin: auto;
     background-color: #ffffff;
 }
 
 .about-section-right h3 {
-    background-color: rgba(252, 243, 0, .5);
+    background-color: rgba(255, 198, 0, .5);
 }
 
 .about-section-left h3 {
-    background-color: rgba(255, 198, 0, .5);
+    background-color: rgba(252, 243, 0, .5);
 }
 
 .headshots {
@@ -246,8 +276,7 @@ label {
 #result-box {
     border: 2px solid rgba(255, 198, 0, 1);
     width: 50%;
-    margin: auto;
-    margin-top: 35px;
+    margin: 35px auto auto auto;
     background-color: white;
     box-shadow: 2px 2px 5px black;
 }
@@ -298,9 +327,9 @@ label {
 /* footer */
 footer {
     margin-top: 50px;
-    padding: 25px;
     width: 100%;
-    height: 20px;
+    height: 60px;
+    line-height: 60px;
     background-color: rgba(7, 42, 200, .5);
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;

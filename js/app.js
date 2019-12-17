@@ -1,6 +1,6 @@
 'use strict';
 
-// Global variables and document elements
+// Document Elements
 let welcomeMessage = document.getElementById('welcome-instruct');
 let nameField = document.getElementById('username-entry');
 let nameEntry = document.getElementById('nameEntry');
@@ -11,11 +11,14 @@ let input0 = document.getElementById('input0');
 let output0 = document.getElementById('output0');
 let input1 = document.getElementById('input1');
 let output1 = document.getElementById('output1');
+
+// Globals
 let userObjects = [];
 let quizObjects = [];
 let x = 0;
 let y = 0;
 let quadrant = 0;
+let lastThreeAttempts = [];
 
 // Constructor functions
 function User(userName){ // This is the constructor function for our User objects. This has not yet been developed very far. More to come.
@@ -52,6 +55,13 @@ Quiz.prototype.newAttempt = function(resultToIncrement){ // A method of Quiz to 
     ++this.results[resultToIncrement][1];
   } else{
     alert('You maybe did not call your Quiz newAttempt prototype function correctly? Go debug bruh!');
+  }
+
+  lastThreeAttempts.push(this.results[resultToIncrement]);
+
+  while (lastThreeAttempts.length > 3) {
+    lastThreeAttempts.shift();
+    lastThreeAttempts.push(this.results[resultToIncrement]);
   }
 };
 
@@ -106,24 +116,10 @@ function newResponse(weight){ // This is a function to call in the event handler
 function lastResponse(){ // This needs to be run when the last question is answered. You must feed it the name of the quiz. It will call mapXY, add a newAttempt to the quiz, and load the results.html page.
   mapXY();
   currentQuiz.newAttempt(quadrant);
+
+  nameField.removeEventListener('submit', handleSubmit);
+
   window.location.href = 'results.html';
-}
-
-new User('bob');
-// When username is entered...
-nameField.addEventListener('submit', handleSubmit);
-
-
-// Do things with it
-function handleSubmit(event) {
-  event.preventDefault();
-
-  let newUsername = event.target.inputNameValue.value;
-  new User(newUsername);
-
-  hide(welcomeMessage);
-  hide(nameField);
-  show(questionBox);
 }
 
 function optionEvents(element, option){ // This function contains an event listener we use for the options. It will call newResponse according to option, move currentQuestion to the next value, and depending if there are remaining questions, call either renderQuestion (for the next question now), or call lastResponse.
@@ -140,6 +136,8 @@ function optionEvents(element, option){ // This function contains an event liste
 }
 
 function renderQuestion() { // This function renders our main feature to the page with its content, and adds event listeners to the options (only when the first question is loaded).
+  nameField.addEventListener('submit', handleSubmit);
+  
   theQuestion.innerText = currentQuiz.questions[currentQuestion][0];
   output0.innerText = currentQuiz.questions[currentQuestion][1];
   output1.innerText = currentQuiz.questions[currentQuestion][3];
@@ -149,6 +147,20 @@ function renderQuestion() { // This function renders our main feature to the pag
   }
 }
 
+// Do things with it
+function handleSubmit(event) {
+  event.preventDefault();
+  
+  let newUsername = event.target.inputNameValue.value;
+  new User(newUsername);
+  
+  hide(welcomeMessage);
+  hide(nameField);
+  show(questionBox);
+}
+
 // Call our main function
 renderQuestion();
 hide(questionBox);
+
+new User('bob');

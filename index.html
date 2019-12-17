@@ -1,1 +1,57 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <title>DuckPersona</title>
+        <link href="css/reset.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bungee&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <section id="header-img-title">
+                <a href="index.html">
+                    <img class="title-duck" src="assets/regular-duck.jpg" alt="A photo of an unornamented rubber duck" title="a traditional rubber duck" />
+                </a>
+                    <h1>What's Your Rubber Duck Persona?</h1>
+            </section>
+            <ul>
+                <li><a href="results.html">My Results</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="aboutDucks.html">About Our Ducks</a></li>
+            </ul>
+        </header>
+        <main>
+            <section id="welcome-instruct">
+                <p>Have you ever gazed contemplatively at a rubber duck and wondered,<br>"if I were reborn as this creature, what would I be like?"<br>Probably not, but here you are anyway!<br>Answer a few questions to determine your rubber duck persona.<br><br></p>
+                <button id="instruct-button">Hide Instructions</button>
+            </section>
+            <section id="username-entry">
+                <form>
+                    <fieldset>
+                        <label>Before we begin, what is your name?</label>
+                        <input type="text" id="inputNameValue" placeholder="input username">
+                        <button id="nameEntry" type="submit">Submit</button>
+                    </fieldset>
+                </form>
+            </section>
+            <section id="question-box">
+                <h2 id="theQuestion">Question 1</h2>
+                <form id="theField">
+                    <fieldset>
+                        <div id="input0"> 
+                        <label id="output0" placeholder="choose answer one">Option 1</label>
+                        </div>
+                        <div id="input1">
+                        <label id="output1" placeholder="choose answer two">Option 2</label>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+        <footer id="index-footer">
+            &copy 2019 Team OPSS; Cas & Brett & Madison & Thomas
+        </footer>
+        <script src="js/app.js"></script>
+    </body>
+</html>

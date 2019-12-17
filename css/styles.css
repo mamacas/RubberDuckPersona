@@ -127,7 +127,7 @@ label {
     border: 2px solid rgba(255, 198, 0, 1);
     width: 60%;
     min-width: 500px;
-    margin: auto;
+    margin: 35px auto auto auto;
     text-align: center;
     background-color: #ffffff;
     box-shadow: 2px 2px 5px black;
@@ -246,8 +246,7 @@ label {
 #result-box {
     border: 2px solid rgba(255, 198, 0, 1);
     width: 50%;
-    margin: auto;
-    margin-top: 35px;
+    margin: 35px auto auto auto;
     background-color: white;
     box-shadow: 2px 2px 5px black;
 }

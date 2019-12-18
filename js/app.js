@@ -15,10 +15,12 @@ let output1 = document.getElementById('output1');
 // Globals
 let userObjects = [];
 let quizObjects = [];
+let resultObjects = [];
 let x = 0;
 let y = 0;
 let quadrant = 0;
-let lastThreeAttempts = [];
+let thisAttempt = [];
+let newUsername = '';
 
 // Constructor functions
 function User(userName){ // This is the constructor function for our User objects. This has not yet been developed very far. More to come.
@@ -57,12 +59,7 @@ Quiz.prototype.newAttempt = function(resultToIncrement){ // A method of Quiz to 
     alert('You maybe did not call your Quiz newAttempt prototype function correctly? Go debug bruh!');
   }
 
-  lastThreeAttempts.push(this.results[resultToIncrement]);
-
-  while (lastThreeAttempts.length > 3) {
-    lastThreeAttempts.shift();
-    lastThreeAttempts.push(this.results[resultToIncrement]);
-  }
+  thisAttempt = this.results[resultToIncrement];
 };
 
 // Show/Hide Functions
@@ -87,8 +84,18 @@ duckquiz.addQuestion('You fell asleep watching a movie you really enjoy. You fin
 // parameters: resultTitle, resultBio, imagePath, imageAtl, imageTitle
 duckquiz.addResult('Friduc Kahlo', '“You were a duck that went about in a world of colors…” The archtypical Creative, you wouldn’t necessarily consider yourself an extravert, but rather someone who is “wisely assertive”. You express your own feelings and tell your own story through your creations rather than through conversations. But you are willing to speak for the voiceless, to represent the under-represented, and to put yourself out there regardless of the consequences. “Nothing is absolute. Everything changes, everything moves, everything revolves, everything flies and goes away, ...quacking.”', 'assets/frida-duck.jpg', 'Image of Rubber Duck likeness of artist Frida Kahlo', 'Friduc Kahlo'); // Add a result to 'duckquiz' Quiz, 1/4 or index 0 of 'duckquiz'
 duckquiz.addResult('Chewducca', '“Quack, quaaack quaack. Quaack!” (followed by explosions). You don’t follow the action, you initiate it! You frequently find yourself on dangerous adventures with your best friend. You may not always be the hero, but you enjoy taking the credit for it regardless. Life just isn’t moving fast enough otherwise. Your friends and family mean the galaxy to you, and you’ll fight for them for as long as you can. Your favorite leisure activity is a nice game of dejarik, which you always win because nobody dares upset you.', 'assets/chewbacca-duck.jpg', 'Image of Rubber Duck likeness of Chewbacca', 'Chewducca'); // Add a result to 'duckquiz' Quiz, 2/4 or index 1 of 'duckquiz'
-duckquiz.addResult('Sherduck Holmes', 'You have an insatiable curiosity, wide-ranging interests, and a keen analytical mind. However, you can be more focused on your own thoughts than on those around you, which means you sometimes come across as distant or aloof to the casual observer. Your closest associates know better, though, seeing behind the façade to the warm, engaging, and intensely loyal individual that the World never suspects is there.', 'assets/sherlock-duck', 'Image of Rubber Duck likeness of fictional detective Sherlock Holmes', 'Sherduck Holmes'); // Add a result to 'duckquiz' Quiz, 3/4 or index 2 of 'duckquiz'
-duckquiz.addResult('Vibin\' Duck', 'You enjoy living in leisure, meandering along the path of least resistance. Some may say you’re too passive, but you prefer to think of yourself as a chameleon, adapting to whatever situation you find yourself in. You can’t really be bothered by the trials of life, and you know that whatever will be will be! Those closest to you love your down-for-whatever energy and appreciate your chill disposition. When people ask you what your hobbies are, you tell them you “like to have a good time.” You are really just vibin’.', 'assets/shades-duck', 'Image of Rubber Duck with sunglasses on', 'Vibin Duck'); // Add a result to 'duckquiz' Quiz, 4/4 or index 3 of 'duckquiz'
+duckquiz.addResult('Sherduck Holmes', 'You have an insatiable curiosity, wide-ranging interests, and a keen analytical mind. However, you can be more focused on your own thoughts than on those around you, which means you sometimes come across as distant or aloof to the casual observer. Your closest associates know better, though, seeing behind the façade to the warm, engaging, and intensely loyal individual that the World never suspects is there.', 'assets/sherlock-duck.jpg', 'Image of Rubber Duck likeness of fictional detective Sherlock Holmes', 'Sherduck Holmes'); // Add a result to 'duckquiz' Quiz, 3/4 or index 2 of 'duckquiz'
+duckquiz.addResult('Vibin\' Duck', 'You enjoy living in leisure, meandering along the path of least resistance. Some may say you’re too passive, but you prefer to think of yourself as a chameleon, adapting to whatever situation you find yourself in. You can’t really be bothered by the trials of life, and you know that whatever will be will be! Those closest to you love your down-for-whatever energy and appreciate your chill disposition. When people ask you what your hobbies are, you tell them you “like to have a good time.” You are really just vibin’.', 'assets/shades-duck.jpg', 'Image of Rubber Duck with sunglasses on', 'Vibin Duck'); // Add a result to 'duckquiz' Quiz, 4/4 or index 3 of 'duckquiz'
+
+// Run a check to see if the localStorage quizObjects is newer than ours, and use it if it is (if it exists)
+if(localStorage.quizObjects){
+  let checkDocument = [JSON.stringify(quizObjects)];
+  let checkStorage = [localStorage.getItem('quizObjects')];
+  console.log(`checkDocument.length: ${checkDocument[0].length}\ncheckStorage.length: ${checkStorage[0].length}`)
+  if(checkDocument[0].length === checkStorage[0].length || checkDocument[0].length <= checkStorage[0].length){
+    quizObjects = JSON.parse(localStorage.getItem('quizObjects'))
+  }
+}
 
 let currentQuiz = duckquiz;
 let currentQuestion = (currentQuiz.questions.length - 1);
@@ -113,15 +120,15 @@ function newResponse(weight){ // This is a function to call in the event handler
   }
 }
 // create an object to store in localStorage
-function storeInLS(title, imgpath, bio) {
-  var ResultObject = {
-    title: title,
-    imgPath: imgpath,
-    bio: bio
-  };
+function storeInLS() {
+  if(localStorage.resultObjects){
+    resultObjects = JSON.parse(localStorage.getItem('resultObjects'));
+  }
 
-  //set object in localStorage
-  localStorage.setItem('userResults', JSON.stringify(ResultObject));
+  // [title, bio, src]
+  resultObjects.push(thisAttempt);
+
+  localStorage.setItem('resultObjects', JSON.stringify(resultObjects))
 }
 
 function lastResponse(){ // This needs to be run when the last question is answered. You must feed it the name of the quiz. It will call mapXY, add a newAttempt to the quiz, and load the results.html page.
@@ -130,17 +137,11 @@ function lastResponse(){ // This needs to be run when the last question is answe
 
   nameField.removeEventListener('submit', handleSubmit);
 
-  let mostRecentAttempt = lastThreeAttempts[lastThreeAttempts.length - 1];
+  thisAttempt.push(newUsername);
+  console.log('thisAttempt: ', thisAttempt);
 
-  console.log('mostRecentAttempt: ', mostRecentAttempt);
-  
-  for (var i = 0; i < mostRecentAttempt.length; i++) {
-    mostRecentAttempt[i]++;
-  }
-
-  storeInLS(mostRecentAttempt[0], mostRecentAttempt[3], mostRecentAttempt[2]);
-
-  // console.log('new mra: ', mostRecentAttempt);
+  storeInLS();
+  localStorage.setItem('quizObjects', JSON.stringify(quizObjects))
 
   window.location.href = 'results.html';
 }
@@ -174,7 +175,7 @@ function renderQuestion() { // This function renders our main feature to the pag
 function handleSubmit(event) {
   event.preventDefault();
   
-  let newUsername = event.target.inputNameValue.value;
+  newUsername = event.target.inputNameValue.value;
   new User(newUsername);
   
   hide(welcomeMessage);

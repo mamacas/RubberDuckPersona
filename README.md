@@ -31,6 +31,18 @@ View our work flow [here](https://github.com/OPSS2019/OPSS_final_project/project
 - [Chewducca Image](https://www.romeduckstore.it/wp-content/uploads/2019/11/paperella-Chewbecca2-600x600.png)
 - [Sherduck Holmes Image](https://images-na.ssl-images-amazon.com/images/I/51HWPOJDhtL._SL1000_.jpg)
 
+- ### WCAG Accessibility Compliance Research:  
+**Background/Overview -** (most of this when far beyond the scope of our project, but it helped orient a background understanding of the objectives)
+- https://developer.mozilla.org/en-US/docs/Web/Accessibility
+- https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG
+__*For a deeper dive:*__
+- https://www.w3.org/WAI/standards-guidelines/wcag/
+- https://www.w3.org/WAI/WCAG21/quickref/
+
+**Guidance I settled on (within project scope):**
+- https://www.w3schools.com/html/html_accessibility.asp
+- https://developer.mozilla.org/en-US/docs/Learn/Accessibility
+
 ## Quiz Logic
    To begin with, we were very unsure how to build the logic behind what the quiz answers mean. Our first thoughts traveled to the most basic of options, increase or decrease a single counter, and each of our results would be associated with specified value ranges. You could spoof this a bit to seem more or less dynamic. Result values that are odd are A, evens are B, add a 'pitfall' question that a certain option always give you a certain (or random) duck, and so on. But beyond those tricks, there's really no dynamics at play.
   

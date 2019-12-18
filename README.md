@@ -53,3 +53,4 @@ __*For a deeper dive:*__
 - Initial inspiration for 'x and y' idea: https://codepen.io/danubevictoria/pen/WObGGQ
 - Another inspiration for 'x and y' idea: https://codepen.io/edubz99/pen/PeRjNb?editors=1010
 - A article of recommendations on how to write better quiz questions: https://springhole.net/writing/write-better-personality-quizzes.htm
+- Frida Kahlo quote inspiration: https://www.goodreads.com/author/quotes/52760.Frida_Kahlo

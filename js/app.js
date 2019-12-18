@@ -88,9 +88,11 @@ duckquiz.addResult('Sherduck Holmes', 'You have an insatiable curiosity, wide-ra
 duckquiz.addResult('Vibin\' Duck', 'You enjoy living in leisure, meandering along the path of least resistance. Some may say you’re too passive, but you prefer to think of yourself as a chameleon, adapting to whatever situation you find yourself in. You can’t really be bothered by the trials of life, and you know that whatever will be will be! Those closest to you love your down-for-whatever energy and appreciate your chill disposition. When people ask you what your hobbies are, you tell them you “like to have a good time.” You are really just vibin’.', 'assets/shades-duck.jpg', 'Image of Rubber Duck with sunglasses on', 'Vibin Duck'); // Add a result to 'duckquiz' Quiz, 4/4 or index 3 of 'duckquiz'
 
 // Run a check to see if the localStorage quizObjects is newer than ours, and use it if it is (if it exists)
-if(localStorage.quizObjects){
   let checkDocument = [JSON.stringify(quizObjects)];
   let checkStorage = [localStorage.getItem('quizObjects')];
+if(localStorage.quizObjects){
+  checkDocument = [JSON.stringify(quizObjects)];
+  checkStorage = [localStorage.getItem('quizObjects')];
   console.log(`checkDocument.length: ${checkDocument[0].length}\ncheckStorage.length: ${checkStorage[0].length}`)
   if(checkDocument[0].length === checkStorage[0].length || checkDocument[0].length <= checkStorage[0].length){
     quizObjects = JSON.parse(localStorage.getItem('quizObjects'))

@@ -241,7 +241,7 @@ label {
 
 /* Result Page Styling */
 
-#result-box {
+#new-result-box {
     border: 2px solid rgba(255, 198, 0, 1);
     width: 50%;
     margin: 35px auto auto auto;
@@ -249,13 +249,13 @@ label {
     box-shadow: 2px 2px 5px black;
 }
 
-#result-box>h2 {
+#new-result-box > h2 {
     width: 100%;
     background-color: rgba(252, 243, 0, .5);
     border: none;
 }
 
-#result-box section {
+#new-result-box section {
     margin: 15px;
 }
 
@@ -264,7 +264,7 @@ label {
     margin: 10px;
 }
 
-.prev-result {
+#second-result-box, #third-result-box {
     border: 2px solid rgba(255, 198, 0, 1);
     background-color: white;
     box-shadow: 2px 2px 5px black;
@@ -274,19 +274,19 @@ label {
     height: 200px;
 }
 
-.prev-result img {
+#second-result-box img, #third-result-box img {
     width: 150px;
     float: right;
     margin: 10px;
 }
 
-.prev-result h3 {
+#second-result-box h3, #third-result-box h3 {
     float: left;
     width: 100%;
     background-color: rgba(252, 243, 0, .5);
 }
 
-.prev-result p {
+#second-result-box p, #third-result-box p {
     float: left;
     clear: both;
     margin: 10px;

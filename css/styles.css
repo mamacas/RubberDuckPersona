@@ -72,7 +72,7 @@ a:visited {
 h2 {
     font-size: 30px;
     font-family: 'Bungee', cursive;
-    width: 300px;
+    /* width: 300px; */
     margin: auto;
 }
 
@@ -88,6 +88,14 @@ h4 {
     padding-top: 10px;
 }
 
+blockquote {
+    font-size: 17px;
+    font-style: italic;
+}
+
+#italic {
+    font-style: italic;
+}
 p{
     font-family: 'Open Sans', sans-serif;
     padding: 10px;
@@ -107,20 +115,22 @@ label {
 /* Index Styling */
 
 #welcome-instruct {
-    display: block;
-    /* border: 1px dashed orange; */
-    width: 50%;
-    margin: auto;
-    padding: 20px 0px 10px 0px;
-    margin-top: 20px;
+    border: 2px solid rgba(255, 198, 0, 1);
+    width: 75%;
+    margin: 35px auto auto auto;
+    background-color: white;
+    box-shadow: 2px 2px 5px black;
+}
+
+#welcome-instruct h2 {
+    width: 100%;
+    background-color: rgba(252, 243, 0, .5);
 }
 
 #username-entry {
-    display: block;
-    /* border: 1px dashed orange; */
-    width: 50%;
+    /* display: inline; */
+    width: 75%;
     margin: auto;
-    padding: 20px 0px;
 }
 
 #question-box {
@@ -128,43 +138,17 @@ label {
     width: 60%;
     min-width: 500px;
     margin: 35px auto auto auto;
-    text-align: center;
+    /* text-align: center; */
     background-color: #ffffff;
     box-shadow: 2px 2px 5px black;
 }
 
 #question-box h2 {
-    width: 98.5%;
-    padding: 5px;
     background-color: rgba(252, 243, 0, .5);
 }
 
-#question-text {
-    border: 1px solid red;
-    width: 85%;
-    font-size: 20px;
-    display: inline-block;
-    text-align: center;
-    margin: 20px 0px 20px 45px;
-    padding: 10px;
-}
-
-/* #leftbutton {
+/* #question-text {
     float: left;
-    width: 40px;
-}
-
-#rightbutton {
-    float: right;
-    width: 40px;
-} */
-
-#question-text {
-    float: left;
-}
-
-/* #question-submit {
-    display: inline-block;
 } */
 
 #input0, #input1 {
@@ -174,22 +158,6 @@ label {
 }
 
 /* About Us Styling */
-
-/* #about-title {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border: 2px solid rgba(255, 198, 0, 1);
-    width: 50%;
-    margin: 35px auto auto auto;
-    background-color: white;
-    box-shadow: 2px 2px 5px black;
-}
-
-#about-title h2 {
-    width: 100%;
-    background-color: rgba(252, 243, 0, .5);
-    border: none;
-} */
 
 #about-container {
     border: 2px solid rgba(255, 198, 0, 1);
@@ -248,7 +216,7 @@ label {
     margin: auto;
     margin-top: 20px;
     padding-right: 20px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .bioleft {
@@ -258,7 +226,7 @@ label {
     margin: auto;
     margin-top: 20px;
     padding-left: 20px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .imgleft {

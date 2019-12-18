@@ -88,6 +88,14 @@ h4 {
     padding-top: 10px;
 }
 
+blockquote {
+    font-size: 17px;
+    font-style: italic;
+}
+
+#italic {
+    font-style: italic;
+}
 p{
     font-family: 'Open Sans', sans-serif;
     padding: 10px;
@@ -208,7 +216,7 @@ label {
     margin: auto;
     margin-top: 20px;
     padding-right: 20px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .bioleft {
@@ -218,7 +226,7 @@ label {
     margin: auto;
     margin-top: 20px;
     padding-left: 20px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .imgleft {

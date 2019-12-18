@@ -112,14 +112,15 @@ function newResponse(weight){ // This is a function to call in the event handler
   } else{alert('Your \'newResponse\' function resulted in a failure.\nIt\'s likely that you didn\'t pass a valid argument somewhere.\nGo debug, bruh!');
   }
 }
-
-function storeInLS(title, imgpath, description) {
+// create an object to store in localStorage
+function storeInLS(title, imgpath, bio) {
   var ResultObject = {
     title: title,
     imgPath: imgpath,
-    description: description
+    bio: bio
   };
 
+  //set object in localStorage
   localStorage.setItem('userResults', JSON.stringify(ResultObject));
 }
 
@@ -133,7 +134,13 @@ function lastResponse(){ // This needs to be run when the last question is answe
 
   console.log('mostRecentAttempt: ', mostRecentAttempt);
   
+  for (var i = 0; i < mostRecentAttempt.length; i++) {
+    mostRecentAttempt[i]++;
+  }
+
   storeInLS(mostRecentAttempt[0], mostRecentAttempt[3], mostRecentAttempt[2]);
+
+  // console.log('new mra: ', mostRecentAttempt);
 
   window.location.href = 'results.html';
 }

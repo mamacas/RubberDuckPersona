@@ -1,5 +1,5 @@
 # OPSS_final_project
-Code 201n16 final project
+Code 201n16 final project: 
 [What's Your Duck Persona?](https://opss2019.github.io/OPSS_final_project/)
 
 ## Description
@@ -36,8 +36,8 @@ View our work flow [here](https://github.com/OPSS2019/OPSS_final_project/project
   
    We came across a couple CodePen examples while investigating other ideas. The first link below prompted the 'x and y' idea after being quickly misread, and the suggestion of the second link below strengthened confidence in the 'x and y' idea. At their most basic, it's the same as the basic idea above with an additional value. I found it translated very well to a graph for visualization. In an xy graph, we have a x-axis and a y-axis, creating quadrants. We can assign a final result to each quadrant, and choose which value(s) will increment or decrement by however much we want for each response. This allows us our first taste of a dynamic quiz logic, achieves our needs, and really opens us up to scale up if we get to that point!
 
-   References:
+### References:
   
-Initial inspiration for 'x and y' idea: https://codepen.io/danubevictoria/pen/WObGGQ
-
-Another inspiration for 'x and y' idea: https://codepen.io/edubz99/pen/PeRjNb?editors=1010
+- Initial inspiration for 'x and y' idea: https://codepen.io/danubevictoria/pen/WObGGQ
+- Another inspiration for 'x and y' idea: https://codepen.io/edubz99/pen/PeRjNb?editors=1010
+- A article of recommendations on how to write better quiz questions: https://springhole.net/writing/write-better-personality-quizzes.htm

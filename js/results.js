@@ -15,77 +15,47 @@ var oldResultHeader = document.getElementById('third-result-header');
 var oldResultImg = document.getElementById('third-result-img');
 var oldResultBio = document.getElementById('third-result-bio');
 
+const sampleResult = ["Chewducca",1,"You don't follow the action, you initiate it! You frequently find yourself on dangerous adventures with your best friend. You may not always be the hero, but you enjoy taking the credit for it regardless. Life just isn't moving fast enough otherwise. Your friends and family mean the galaxy to you, and you'll fight for them for as long as you can. Your favorite leisure activity is a nice game of dejarik, which you always win because nobody dares upset you.","assets/chewbacca-duck.jpg","Image of Rubber Duck likeness of Chewbacca","Chewducca","Robert"];
+
+let resultObjects = [];
+let quizObjects = [];
+let userObjects = [];
+
 // populate result titles, images, and bios on results.html
 
-var oldResult= {
-  title: '',
-  imgpath: '',
-  bio: ''
+var renderResults = function(){
+  newResultHeader.innerText = resultObjects[2][0];
+  newResultImg.src = resultObjects[2][3];
+  newResultBio.innerText = resultObjects[2][2];
+
+  secondResultHeader.innerText = resultObjects[1][0];
+  secondResultImg.src = resultObjects[1][3];
+  secondResultBio.innerText = resultObjects[1][2];
+
+  oldResultHeader.innerText = resultObjects[0][0];
+  oldResultImg.src = resultObjects[0][3];
+  oldResultBio.innerText = resultObjects[0][2];
 };
 
-var secondResult = {
-  title: '',
-  imgpath: '',
-  bio: ''
-};
-
-var newResult = {
-  title: '',
-  imgpath: '',
-  bio: ''
-};
-
-var threeResults = [oldResult, secondResult, newResult];
-
-// var newResultBox = document.getElementById('');
-
-var newestResult = function(){
-
-  newResultHeader.innerText = newResult.title;
-  newResultImg.innerHTML = newResult.imgpath;
-  newResultBio.innerText = newResult.bio;
-};
-
-var resultTwoAndThree = function() {
-  secondResultHeader.innerText = secondResult.title;
-  secondResultImg.innerHTML = secondResult.imgpath;
-  secondResultBio.innerText = secondResult.bio;
-
-  oldResultHeader.innerText = oldResult.title;
-  oldResultImg.innerHTML = oldResult.imgpath;
-  oldResultBio.innerText = oldResult.bio;
-};
-
-
-function popResults(){
-  var dataLS = localStorage.getItem('userResults');
-  newestResult();
-  resultTwoAndThree();
-  console.log('new result: ', newResult);
-  console.log('results two and three ', oldResult, secondResult);
-  if (dataLS) {
-    let parsedUserResults = [];
-    parsedUserResults = JSON.parse(dataLS);
-    
-    console.log('old last three attempts: ', parsedUserResults);
-    
-    // for (var i = 0; i < parsedUserResults.length; i++) {
-    //   parsedUserResults[i]++;
-    // }
-    
-    // console.log('new lastThreeAttempts: ', parsedUserResults);
-    // return parsedUserResults;
-  } else {
-    console.log('nothing in lS');
+function getObjects(){
+  if(localStorage.resultObjects){
+    resultObjects = JSON.parse(localStorage.getItem('resultObjects'));
   }
-  
-  // firstResult.title = parsedUserResults[parsedUserResults.length - 1].title;
-  // firstResult.imgpath = parsedUserResults[parsedUserResults.length = 1].imgpath;
-  // firstResult.description = parsedUserResults[parsedUserResults.length = 1].bio;
+  while(resultObjects.length < 3){
+    resultObjects.unshift(sampleResult);
+  }
+  while(resultObjects.length > 3){
+    resultObjects.shift();
+  }
 
+  if(localStorage.quizObjects){
+    quizObjects = JSON.parse(localStorage.getItem('quizObjects'));
+  }
+
+  if(localStorage.userObjects){
+    quizObjects = JSON.parse(localStorage.getItem('userObjects'));
+  }
 }
 
-popResults();
-
-
-
+getObjects();
+renderResults();

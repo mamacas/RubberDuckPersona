@@ -22,6 +22,7 @@ header {
     max-width: 100px;
     float: left;
     padding-left: 10px;
+    padding-top: 10px;
 }
 
 h1 {
@@ -157,10 +158,6 @@ label {
     padding: 20px;
 }
 
-/* #question-text {
-    float: left;
-} */
-
 #input0, #input1 {
     padding: 20px;
     float: left;
@@ -283,7 +280,7 @@ label {
     margin: auto;
     margin-top: 20px;
     width: 50%;
-    height: 200px;
+    height: 225px;
 }
 
 .prev-result-box h3 {
@@ -295,7 +292,7 @@ label {
 .prev-result-box p {
     float: left;
     width: 70%;
-    padding-top: 20px;
+    padding-top: 45px;
 }
 
 .prev-result-box img {

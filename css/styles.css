@@ -127,6 +127,9 @@ label {
 }
 
 #welcome-instruct h2 {
+    /* font-family: 'Open Sans', sans-serif; */
+    font-size: 20px;
+    padding: 10px;
     width: 100%;
     background-color: rgba(252, 243, 0, .5);
 }
@@ -135,6 +138,7 @@ label {
     /* display: inline; */
     width: 75%;
     margin: auto;
+    padding: 20px;
 }
 
 #question-box {
@@ -149,6 +153,8 @@ label {
 
 #question-box h2 {
     background-color: rgba(252, 243, 0, .5);
+    font-size: 20px;
+    padding: 20px;
 }
 
 /* #question-text {
@@ -156,9 +162,13 @@ label {
 } */
 
 #input0, #input1 {
-    padding: 10px;
+    padding: 20px;
     float: left;
     clear: both;
+}
+
+#input0:hover, #input1:hover {
+    background-color: rgba(255, 198, 0, .5);
 }
 
 /* About Us Styling */
@@ -245,30 +255,28 @@ label {
 
 /* Result Page Styling */
 
-#result-box {
+#new-result-box {
     border: 2px solid rgba(255, 198, 0, 1);
     width: 50%;
     margin: 35px auto auto auto;
     background-color: white;
     box-shadow: 2px 2px 5px black;
+    padding-bottom: 20px;
 }
 
-#result-box>h2 {
+#new-result-box h2 {
     width: 100%;
     background-color: rgba(252, 243, 0, .5);
     border: none;
 }
 
-#result-box section {
-    margin: 15px;
+#new-result-img {
+    width: 300px;
+    height: auto;
+    margin: auto;
 }
 
-#duck-persona {
-    width: 225px;
-    margin: 10px;
-}
-
-.prev-result {
+.prev-result-box {
     border: 2px solid rgba(255, 198, 0, 1);
     background-color: white;
     box-shadow: 2px 2px 5px black;
@@ -278,22 +286,22 @@ label {
     height: 200px;
 }
 
-.prev-result img {
-    width: 150px;
-    float: right;
-    margin: 10px;
-}
-
-.prev-result h3 {
-    float: left;
+.prev-result-box h3 {
     width: 100%;
     background-color: rgba(252, 243, 0, .5);
+    border: none;
 }
 
-.prev-result p {
+.prev-result-box p {
     float: left;
-    clear: both;
-    margin: 10px;
+    width: 70%;
+    padding-top: 20px;
+}
+
+.prev-result-box img {
+    width: 200px;
+    height: auto;
+    float: right;
 }
 
 /* footer */

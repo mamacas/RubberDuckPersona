@@ -129,7 +129,8 @@ label {
 #welcome-instruct h2 {
     /* font-family: 'Open Sans', sans-serif; */
     font-size: 20px;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     background-color: rgba(252, 243, 0, .5);
 }

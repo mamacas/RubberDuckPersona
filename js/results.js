@@ -62,29 +62,29 @@ function makeChart() {
   var resultChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: //names of ducks,
+      labels: 'this is a sample label',
       datasets: [{
         label: 'Number of Times Received Result',
-        data: 1,
+        data: resultObjects,
         backgroundColor: [
-          'rgba(217, 125, 72, 1)',
-          'rgba(217, 125, 72, 1)',
-          'rgba(217, 125, 72, 1)',
-          'rgba(217, 125, 72, 1)',
-          'rgba(217, 125, 72, 1)',
+          'rgba(252, 243, 0, 1)',
+          'rgba(252, 243, 0, 1)',
+          'rgba(252, 243, 0, 1)',
+          'rgba(252, 243, 0, 1)',
+          'rgba(252, 243, 0, 1)',
         ],
         borderColor: [
-          'rgba(217, 125, 72, 1)',
+          'rgba(252, 243, 0, 1)',
         ],
         borderWidth: 1,
       }, {
         label: 'Number of Times Taken Quiz',
-        data: 1,
+        data: quizObjects,
         backgroundColor: [
-          'rgba(242, 209, 109, 1)',
-          'rgba(242, 209, 109, 1)',
-          'rgba(242, 209, 109, 1)',
-          'rgba(242, 209, 109, 1)',
+          'rgba(255, 198, 0, 1)',
+          'rgba(255, 198, 0, 1)',
+          'rgba(255, 198, 0, 1)',
+          'rgba(255, 198, 0, 1)',
         ],
       }]
     },
@@ -104,4 +104,4 @@ function makeChart() {
 getObjects();
 renderResults();
 
-makeChart();
+makeChart()

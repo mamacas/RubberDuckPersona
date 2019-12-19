@@ -130,7 +130,7 @@ label {
 #welcome-instruct h2 {
     /* font-family: 'Open Sans', sans-serif; */
     font-size: 20px;
-    padding: 10px;
+    padding: 10px 0px;
     width: 100%;
     background-color: rgba(252, 243, 0, .5);
 }
@@ -155,13 +155,14 @@ label {
 #question-box h2 {
     background-color: rgba(252, 243, 0, .5);
     font-size: 20px;
-    padding: 20px;
+    padding: 20px 0px;
 }
 
 #input0, #input1 {
-    padding: 20px;
+    padding: 20px 0px;
     float: left;
     clear: both;
+    width: 100%;
 }
 
 #input0:hover, #input1:hover {

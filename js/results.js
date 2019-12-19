@@ -57,8 +57,10 @@ function getObjects(){
   }
 }
 
+/* eslint-disable no-unused-vars */
 function makeChart() {
   var ctx = document.getElementById('resultChart').getContext('2d');
+  // eslint-disable-next-line no-undef
   var resultChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -104,4 +106,4 @@ function makeChart() {
 getObjects();
 renderResults();
 
-makeChart()
+makeChart();

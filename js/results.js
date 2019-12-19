@@ -15,7 +15,7 @@ var oldResultHeader = document.getElementById('third-result-header');
 var oldResultImg = document.getElementById('third-result-img');
 var oldResultBio = document.getElementById('third-result-bio');
 
-const sampleResult = ["Chewducca",1,"You don't follow the action, you initiate it! You frequently find yourself on dangerous adventures with your best friend. You may not always be the hero, but you enjoy taking the credit for it regardless. Life just isn't moving fast enough otherwise. Your friends and family mean the galaxy to you, and you'll fight for them for as long as you can. Your favorite leisure activity is a nice game of dejarik, which you always win because nobody dares upset you.","assets/chewbacca-duck.jpg","Image of Rubber Duck likeness of Chewbacca","Chewducca","Robert"];
+const sampleResult = ['No Previous Results (Yet!)',1,'It looks like you haven\'t taken the quiz more than once! First of all, why not? Secondly, once you do so, your previous results will display here. Until then, bask in the presence of his majesty, King Duck','assets/king-duck.png','Image of a rubber duck wearing a crown','King Duck','Robert'];
 
 let resultObjects = [];
 let quizObjects = [];

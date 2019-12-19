@@ -57,5 +57,51 @@ function getObjects(){
   }
 }
 
+function makeChart() {
+  var ctx = document.getElementById('resultChart').getContext('2d');
+  var resultChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: //names of ducks,
+      datasets: [{
+        label: 'Number of Times Received Result',
+        data: 1,
+        backgroundColor: [
+          'rgba(217, 125, 72, 1)',
+          'rgba(217, 125, 72, 1)',
+          'rgba(217, 125, 72, 1)',
+          'rgba(217, 125, 72, 1)',
+          'rgba(217, 125, 72, 1)',
+        ],
+        borderColor: [
+          'rgba(217, 125, 72, 1)',
+        ],
+        borderWidth: 1,
+      }, {
+        label: 'Number of Times Taken Quiz',
+        data: 1,
+        backgroundColor: [
+          'rgba(242, 209, 109, 1)',
+          'rgba(242, 209, 109, 1)',
+          'rgba(242, 209, 109, 1)',
+          'rgba(242, 209, 109, 1)',
+        ],
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+}
+
+
 getObjects();
 renderResults();
+
+makeChart();

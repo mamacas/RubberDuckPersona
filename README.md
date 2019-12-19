@@ -31,7 +31,7 @@ View our work flow [here](https://github.com/OPSS2019/OPSS_final_project/project
 - [Chewducca Image](https://www.romeduckstore.it/wp-content/uploads/2019/11/paperella-Chewbecca2-600x600.png)
 - [Sherduck Holmes Image](https://images-na.ssl-images-amazon.com/images/I/51HWPOJDhtL._SL1000_.jpg)
 
-- ### WCAG Accessibility Compliance Research:  
+### WCAG Accessibility Compliance Research:  
 **Background/Overview -** (most of this when far beyond the scope of our project, but it helped orient a background understanding of the objectives)
 - https://developer.mozilla.org/en-US/docs/Web/Accessibility
 - https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG

@@ -117,6 +117,13 @@ label {
     font-family: 'Open Sans', sans-serif;
 }
 
+#gif-box {
+    width: 30%;
+    padding-top: 50px;
+    margin-top: 50px;
+    float: right;
+}
+
 /* Index Styling */
 
 #welcome-instruct {

@@ -102,17 +102,25 @@ duckquiz.addResult('Chewducca', '“Quack, quaaack quaack. Quaack!” (followed 
 duckquiz.addResult('Friduc Kahlo', '“You were a duck that went about in a world of colors…” The archtypical Creative, you wouldn’t necessarily consider yourself an extravert, but rather someone who is “wisely assertive”. You express your own feelings and tell your own story through your creations rather than through conversations. But you are willing to speak for the voiceless, to represent the under-represented, and to put yourself out there regardless of the consequences. “Nothing is absolute. Everything changes, everything moves, everything revolves, everything flies and goes away, ...quacking.”', 'assets/frida-duck.jpg', 'Image of a Rubber Duck likeness of artist Frida Kahlo', 'Friduc Kahlo'); // Add a result to 'duckquiz' Quiz, 1/4 or index 0 of 'duckquiz'
 
 // Run a check to see if the localStorage quizObjects is newer than ours, and use it if it is (if it exists)
+// if(localStorage.quizObjects){
+//   // quizObjects = JSON.parse(localStorage.getItem('quizObjects'))
+//   let checkDocument = [JSON.stringify(quizObjects)];
+//   let checkStorage = [localStorage.getItem('quizObjects')];
+//   console.log(`checkDocument.length: ${checkDocument[0].length}\ncheckStorage.length: ${checkStorage[0].length}`)
+//   if(checkDocument[0].length === checkStorage[0].length || checkDocument[0].length >= checkStorage[0].length){
+//     duckquiz = JSON.parse(localStorage.getItem('quizObjects'))
+//   }
+// }
+let getQuiz = [];
 if(localStorage.quizObjects){
-  let checkDocument = [JSON.stringify(quizObjects)];
-  let checkStorage = [localStorage.getItem('quizObjects')];
-  console.log(`checkDocument.length: ${checkDocument[0].length}\ncheckStorage.length: ${checkStorage[0].length}`)
-  if(checkDocument[0].length === checkStorage[0].length || checkDocument[0].length <= checkStorage[0].length){
-    quizObjects = JSON.parse(localStorage.getItem('quizObjects'))
-  }
+  getQuiz = JSON.parse(localStorage.getItem('quizObjects'));
+  quizObjects[0].results = getQuiz[0].results;
+  quizObjects[0].quizCounter = getQuiz[0].quizCounter;
+  // quizObjects = JSON.parse(localStorage.getItem('quizObjects'));
 }
 
-let currentQuiz = duckquiz;
-let currentQuestion = (currentQuiz.questions.length - 1);
+// duckquiz = JSON.parse(localStorage.getItem('quizObjects'))
+let currentQuestion = (quizObjects[0].questions.length - 1);
 
 // Helper functions
 function mapXY(){ // This function takes in our x and y values, and converts them into an index value (0-3), that I call 'quadrant' because we use a graph to visualize the relation between x/y and the results.
@@ -143,11 +151,12 @@ function storeInLS() {
   resultObjects.push(thisAttempt);
 
   localStorage.setItem('resultObjects', JSON.stringify(resultObjects))
+  localStorage.setItem('quizObjects', JSON.stringify(quizObjects))
 }
 
 function lastResponse(){ // This needs to be run when the last question is answered. You must feed it the name of the quiz. It will call mapXY, add a newAttempt to the quiz, and load the results.html page.
   mapXY();
-  currentQuiz.newAttempt(quadrant);
+  quizObjects[0].newAttempt(quadrant);
 
   nameField.removeEventListener('submit', handleSubmit);
 
@@ -155,14 +164,13 @@ function lastResponse(){ // This needs to be run when the last question is answe
   console.log('thisAttempt: ', thisAttempt);
 
   storeInLS();
-  localStorage.setItem('quizObjects', JSON.stringify(quizObjects))
 
   window.location.href = 'results.html';
 }
 
 function optionEvents(element, option){ // This function contains an event listener we use for the options. It will call newResponse according to option, move currentQuestion to the next value, and depending if there are remaining questions, call either renderQuestion (for the next question now), or call lastResponse.
   element.addEventListener('click', function(event){
-    newResponse(currentQuiz.questions[currentQuestion][option]);
+    newResponse(quizObjects[0].questions[currentQuestion][option]);
     if(currentQuestion > 0){
       --currentQuestion;
       renderQuestion();
@@ -176,12 +184,12 @@ function optionEvents(element, option){ // This function contains an event liste
 function renderQuestion() { // This function renders our main feature to the page with its content, and adds event listeners to the options (only when the first question is loaded).
   nameField.addEventListener('submit', handleSubmit);
   
-  theQuestion.innerText = currentQuiz.questions[currentQuestion][0];
-  output0.innerText = currentQuiz.questions[currentQuestion][1];
-  output1.innerText = currentQuiz.questions[currentQuestion][3];
-  output2.innerText = currentQuiz.questions[currentQuestion][5];
-  output3.innerText = currentQuiz.questions[currentQuestion][7];
-  if(currentQuestion === (currentQuiz.questions.length - 1)){
+  theQuestion.innerText = quizObjects[0].questions[currentQuestion][0];
+  output0.innerText = quizObjects[0].questions[currentQuestion][1];
+  output1.innerText = quizObjects[0].questions[currentQuestion][3];
+  output2.innerText = quizObjects[0].questions[currentQuestion][5];
+  output3.innerText = quizObjects[0].questions[currentQuestion][7];
+  if(currentQuestion === (quizObjects[0].questions.length - 1)){
     optionEvents(input0, 2);
     optionEvents(input1, 4);
     optionEvents(input2, 6);

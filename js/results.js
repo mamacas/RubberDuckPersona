@@ -15,6 +15,8 @@ var oldResultHeader = document.getElementById('third-result-header');
 var oldResultImg = document.getElementById('third-result-img');
 var oldResultBio = document.getElementById('third-result-bio');
 
+var resultsData = [];
+
 const sampleResult = ['No Previous Results (Yet!)',1,'It looks like you haven\'t taken the quiz more than once! First of all, why not? Secondly, once you do so, your previous results will display here. Until then, bask in the presence of his majesty, King Duck','assets/king-duck.png','Image of a rubber duck wearing a crown','King Duck','Robert'];
 
 let resultObjects = [];
@@ -57,6 +59,14 @@ function getObjects(){
   }
 }
 
+function pushResults(array){
+  for (var i = 0; i < array[0].results.length; i++){
+    var newResultCount = quizObjects[0].results[i].resultCounter;
+    resultsData.push(newResultCount);
+  }
+  return resultsData;
+}
+
 /* eslint-disable no-unused-vars */
 function makeChart() {
   var ctx = document.getElementById('resultChart').getContext('2d');
@@ -64,31 +74,21 @@ function makeChart() {
   var resultChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: 'this is a sample label',
+      labels: ['Friduc Kahlo', 'Chewducca', 'Sherduck Holmes', 'Vibin Duck'],
       datasets: [{
-        label: 'Number of Times Received Result',
-        data: resultObjects,
+        label: 'Number of Times Received Each Result',
+        data: resultsData,
         backgroundColor: [
-          'rgba(252, 243, 0, 1)',
           'rgba(252, 243, 0, 1)',
           'rgba(252, 243, 0, 1)',
           'rgba(252, 243, 0, 1)',
           'rgba(252, 243, 0, 1)',
         ],
         borderColor: [
-          'rgba(252, 243, 0, 1)',
+          'rgba(0, 0, 0, 1)',
         ],
-        borderWidth: 1,
-      }, {
-        label: 'Number of Times Taken Quiz',
-        data: quizObjects,
-        backgroundColor: [
-          'rgba(255, 198, 0, 1)',
-          'rgba(255, 198, 0, 1)',
-          'rgba(255, 198, 0, 1)',
-          'rgba(255, 198, 0, 1)',
-        ],
-      }]
+        borderWidth: 2,
+      },]
     },
     options: {
       scales: {
@@ -106,4 +106,5 @@ function makeChart() {
 getObjects();
 renderResults();
 
+pushResults(quizObjects);
 makeChart();

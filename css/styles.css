@@ -165,14 +165,14 @@ label {
     padding: 20px 0px;
 }
 
-#input0, #input1 {
+#input0, #input1, #input2, #input3 {
     padding: 20px 0px;
     float: left;
     clear: both;
     width: 100%;
 }
 
-#input0:hover, #input1:hover {
+#input0:hover, #input1:hover, #input2:hover, #input3:hover {
     background-color: rgba(255, 198, 0, .5);
 }
 

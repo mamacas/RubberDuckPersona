@@ -132,6 +132,7 @@ function newResponse(weight){ // This is a function to call in the event handler
   } else if(weight === 'y--'){--y;
   } else{alert('Your \'newResponse\' function resulted in a failure.\nIt\'s likely that you didn\'t pass a valid argument somewhere.\nGo debug, bruh!');
   }
+  
 }
 // create an object to store in localStorage
 function storeInLS() {

@@ -309,6 +309,10 @@ label {
     float: right;
 }
 
+canvas {
+    padding-top: 30px;
+}
+
 /* footer */
 footer {
     margin-top: 50px;

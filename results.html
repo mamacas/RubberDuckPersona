@@ -7,6 +7,7 @@
         <link href="css/styles.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Bungee&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
     </head>
     <body>
         <header>
@@ -18,7 +19,6 @@
                 <li><a href="index.html">Retake Quiz</a></li>
                 <li><a href="aboutUs.html">About Us</a></li>
                 <li><a href="aboutDucks.html">About Our Ducks</a></li>
-
             </ul>
         </header>
         <main>
@@ -29,15 +29,18 @@
                     <p id="new-result-bio">result description</p>
                 </section>
             </section>
-            <section id="second-result-box">
+            <section class="prev-result-box" id="second-result-box">
                 <h3 id="second-result-header">Previous Result 1</h3>
                 <p id="second-result-bio">previous result description</p>
                 <img id="second-result-img" src="" alt="" title=""/>
             </section>
-            <section id="third-result-box">
+            <section class="prev-result-box" id="third-result-box">
                 <h3 id="third-result-header">Previous Result 2</h3>
                 <p id="third-result-bio">previous result description</p>
                 <img id="third-result-img" src="" alt="" title="" />
+            </section>
+            <section>
+                <canvas id="resultChart" width="100" height="25"></canvas>
             </section>
         </main>
         <footer>

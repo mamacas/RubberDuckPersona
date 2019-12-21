@@ -61,7 +61,7 @@ function getObjects(){
 
 function pushResults(array){
   for (var i = 0; i < array[0].results.length; i++){
-    var newResultCount = quizObjects[0].results[i].resultCounter;
+    var newResultCount = quizObjects[0].results[i][1];
     resultsData.push(newResultCount);
   }
   return resultsData;

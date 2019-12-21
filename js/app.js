@@ -172,7 +172,7 @@ function lastResponse(){ // This needs to be run when the last question is answe
 // Animate duck gif
 function moveDuck(x) {
   document.getElementById('move-left').style.transform = 'translate(' + x + 'px, 0)';
-  console.log(document.getElementById('move-left'));
+  // console.log(document.getElementById('move-left'));
 }
 
 function optionEvents(element, option){ // This function contains an event listener we use for the options. It will call newResponse according to option, move currentQuestion to the next value, and depending if there are remaining questions, call either renderQuestion (for the next question now), or call lastResponse.

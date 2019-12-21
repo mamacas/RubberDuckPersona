@@ -32,7 +32,7 @@ View our work flow [here](https://github.com/OPSS2019/OPSS_final_project/project
 - [Sherduck Holmes Image](https://images-na.ssl-images-amazon.com/images/I/51HWPOJDhtL._SL1000_.jpg)
 - [Stretchy Colorful Duck GIF](http://33.media.tumblr.com/6594ec504f11d61c1c45d4a9c83112db/tumblr_nrchiceMy01u2u368o1_500.gif)
 - [Quack GIF](https://media.giphy.com/media/lnnJmf0cY5AnVZaAjR/giphy.gif)
-- [Quack GIF Transition Code](https://webdesign.tutsplus.com/articles/css3-transitions-and-transforms-from-scratch--webdesign-4975)
+- [Quack GIF Transition Code Inspiration](https://techstacker.com/vanilla-javascript-how-to-check-if-a-class-exists-practical/cXTuMZ2XutfH36SYc)
 
 ### WCAG Accessibility Compliance Research:  
 **Background/Overview -** (most of this when far beyond the scope of our project, but it helped orient a background understanding of the objectives)

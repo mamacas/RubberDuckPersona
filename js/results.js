@@ -86,6 +86,9 @@ function makeChart() {
         ],
         borderColor: [
           'rgba(252, 243, 0, 1)',
+          'rgba(252, 243, 0, 1)',
+          'rgba(252, 243, 0, 1)',
+          'rgba(252, 243, 0, 1)',
         ],
         borderWidth: 2,
       },]

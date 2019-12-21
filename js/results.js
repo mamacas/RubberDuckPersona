@@ -79,23 +79,28 @@ function makeChart() {
         label: 'Number of Times Received Each Result',
         data: resultsData,
         backgroundColor: [
-          'rgba(252, 243, 0, 1)',
-          'rgba(252, 243, 0, 1)',
-          'rgba(252, 243, 0, 1)',
-          'rgba(252, 243, 0, 1)',
+          'rgba(252, 243, 0, .5)',
+          'rgba(252, 243, 0, .5)',
+          'rgba(252, 243, 0, .5)',
+          'rgba(252, 243, 0, .5)',
         ],
         borderColor: [
-          'rgba(0, 0, 0, 1)',
+          'rgba(252, 243, 0, 1)',
         ],
         borderWidth: 2,
       },]
     },
     options: {
       scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
+        xAxes: [{
+          gridLines: {
+            display:false
           }
+        }],
+        yAxes: [{
+          gridLines: {
+            display:false
+          }   
         }]
       }
     }

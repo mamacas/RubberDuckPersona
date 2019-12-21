@@ -11,7 +11,6 @@ body {
 }
 
 header {
-    /* border: 1px solid black; */
     height: 120px;
     background-color: #ffffff;
     box-shadow: 2px 2px 5px 1px black;
@@ -26,7 +25,6 @@ header {
 }
 
 h1 {
-    /* border: 1px dotted black; */
     font-family: 'Bungee', cursive;
     font-size: 40px;
     float: left;
@@ -73,7 +71,6 @@ a:visited {
 h2 {
     font-size: 30px;
     font-family: 'Bungee', cursive;
-    /* width: 300px; */
     margin: auto;
 }
 
@@ -117,14 +114,13 @@ label {
     font-family: 'Open Sans', sans-serif;
 }
 
+/* Index Styling */
+
 #gif-box {
     width: 30%;
-    padding-top: 50px;
-    margin-top: 50px;
+    margin-top: 100px;
     float: right;
 }
-
-/* Index Styling */
 
 #welcome-instruct {
     border: 2px solid rgba(255, 198, 0, 1);

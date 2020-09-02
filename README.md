@@ -7,7 +7,7 @@ An interactive page of multiple choice questions that compound to determine the 
 
 ## Contributors
 - Brett Packard
-- Cas Olejniczak
+- Cas Ibrahim
 - Madison Stehle
 - Thomas Sherer
 
